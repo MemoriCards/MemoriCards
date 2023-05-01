@@ -1,11 +1,11 @@
-import { ErrorSection } from "../../components/ErrorSection"
+import { ErrorSection } from "../../components/ErrorSection";
 
-const ErrorPage = () => {
-    return (
-        <>
-        <main>
-            <ErrorSection />
-        </main>
-        </>
-    )
-}
+export const ErrorPage = () => {
+  return (
+    <>
+      <main>
+        <ErrorSection />
+      </main>
+    </>
+  );
+};
