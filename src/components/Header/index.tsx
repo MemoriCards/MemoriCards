@@ -13,9 +13,9 @@ export const Header = () => {
         </figure>
         {isLogged ? (
           <nav>
-            <NavLink to="/">Entrar</NavLink>
-            <NavLink to="/">Cadastro</NavLink>
-            <NavLink to="/">Sobre</NavLink>
+            <NavLink to="/login">Entrar</NavLink>
+            <NavLink to="/register">Cadastro</NavLink>
+            <NavLink to="/about">Sobre</NavLink>
           </nav>
         ) : (
           <nav>
