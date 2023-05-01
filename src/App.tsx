@@ -1,5 +1,3 @@
-import { DashboardPage } from "./pages/DashboardPage";
-
 function App() {
   return (
     <>
