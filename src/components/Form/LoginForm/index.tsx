@@ -9,7 +9,7 @@ export const LoginForm = () => {
         resolver: zodResolver(LoginFormSchema)
     })
 
-    const submit: SubmitHandler<TLoginValues> = (formData) => console.log(formData);
+    const submit: SubmitHandler<TLoginValues> = (formData) => console.log(formData)
 
     return (
         <>
