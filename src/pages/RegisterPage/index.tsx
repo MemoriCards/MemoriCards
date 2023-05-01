@@ -1,7 +1,9 @@
-import React from "react";
+import { RegisterForm } from "../../components/Form/RegisterForm";
 
-const index = () => {
-  return <div>index</div>;
+export const RegisterPage = () => {
+  return (
+    <div>
+      <RegisterForm />
+    </div>
+  );
 };
-
-export default index;
