@@ -14,12 +14,12 @@ export const LoginForm = () => {
     return (
         <>
             <h1>Entrar</h1>
-            <form onSubmit={handleSubmit(submit)}>
+            <form onSubmit={handleSubmit(submit)} noValidate>
                 <Input label='Email' type='email' {...register("email")} />
-                {errors.email ? errors.email.message : null}
+                {errors.email ? <p>{errors.email.message}</p> : null}
                 <Input label='Senha' type='password' {...register("password")} />
-                {errors.password ? errors.password.message : null}
-                <button>Entrar</button>
+                {errors.password ?  <p>{errors.password.message}</p>: null}
+                <button type='submit'>Entrar</button>
             </form>
         </>
     )
