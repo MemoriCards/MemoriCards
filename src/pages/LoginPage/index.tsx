@@ -1,9 +1,11 @@
-import { LoginForm } from "../../components/Form/LoginForm"
+import { LoginForm } from "../../components/Form/LoginForm";
+import { Header } from "../../components/Header";
 
 export const LoginPage = () => {
-    return (
-        <div>
-            <LoginForm />
-        </div>
-    )
-}
+  return (
+    <div>
+      <Header />
+      <LoginForm />
+    </div>
+  );
+};
