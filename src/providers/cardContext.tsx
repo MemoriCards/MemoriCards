@@ -11,6 +11,9 @@ interface iCard {
 }
 interface iCardContext {
   cards: iCard[] | null;
+  editCard: (formData: iEditCard) => Promise<void>;
+  createCard: (formData: iCreateCard) => Promise<void>;
+  deleteCard: () => Promise<void>;
 }
 
 interface iGetResponse {
@@ -98,6 +101,8 @@ export const CardProvider = ({ children }: iProviderProps) => {
   };
 
   return (
-    <cardContext.Provider value={{ cards }}>{children}</cardContext.Provider>
+    <cardContext.Provider value={{ cards, editCard, createCard, deleteCard }}>
+      {children}
+    </cardContext.Provider>
   );
 };
