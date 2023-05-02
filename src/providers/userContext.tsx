@@ -6,7 +6,7 @@ import { TLoginValues } from "../components/Form/LoginForm/LoginFormSchema";
 import { TRegisterValues } from "../components/Form/RegisterForm/RegisterFormSchema";
 import { api } from "../services/api";
 
-interface iUserProviderProps {
+export interface iProviderProps {
   children: React.ReactNode;
 }
 
@@ -30,7 +30,7 @@ interface iUserResponse {
 
 export const userContext = createContext({} as iUserContext);
 
-export const UserProvider = ({ children }: iUserProviderProps) => {
+export const UserProvider = ({ children }: iProviderProps) => {
   const [user, setUser] = useState<iUser | null>(null);
   const navigate = useNavigate();
 
@@ -44,7 +44,6 @@ export const UserProvider = ({ children }: iUserProviderProps) => {
           const { data: userData } = await api.get(`/users/${id}`);
           delete userData.password;
           setUser(userData);
-          navigate("/dashboard");
         }
       } catch (error) {
         console.error(error);
