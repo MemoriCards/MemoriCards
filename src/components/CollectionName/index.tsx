@@ -1,8 +1,8 @@
 export const CollectionName = () => {
     return (
-        <section>
-            <input placeholder="De um nome para sua coleção de cartões..." />
-            <button>OK</button>
-        </section>
+        <form>
+            <input type="text" placeholder="De um nome para sua coleção de cartões..." />
+            <button type="submit">OK</button>
+        </form>
     )
 }
