@@ -3,13 +3,14 @@ export const AboutPage = () => {
     <main>
       <section>
         <h1>MemoriCards</h1>
+
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam,
           nostrum inventore? Ipsa sed incidunt porro dolor sequi id? Sed,
           quaerat. Tempora corrupti reprehenderit, est maiores ipsam veniam
           quaerat libero molestias
         </p>
-        <img src="#" alt="#" />
+       <img src="#" alt="#" />
       </section>
       <section>
         <h2>Devs</h2>
@@ -19,6 +20,7 @@ export const AboutPage = () => {
           <span>Dev Full Stack Master Blaster Top</span>
         </div>
         <div>
+
           <p>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut officia
             quis veniam aperiam blanditiis corporis? Ut veniam quibusdam minus
