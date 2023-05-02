@@ -2,13 +2,16 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Input } from '../../../fragments/Input/index';
 import { RegisterFormSchema, TRegisterValues } from './RegisterFormSchema';
+import { useContext } from 'react';
+import { userContext } from '../../../providers/userContext';
 
 export const RegisterForm = () => {
     const { register, handleSubmit, formState: { errors } } = useForm<TRegisterValues>({
         resolver: zodResolver(RegisterFormSchema)
-    })
+    });
+    const { doRegister } = useContext(userContext);
 
-    const submit: SubmitHandler<TRegisterValues> = (formData) => console.log(formData);
+    const submit: SubmitHandler<TRegisterValues> = (formData) => doRegister(formData);
 
     return (
         <>
