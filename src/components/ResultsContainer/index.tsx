@@ -1,4 +1,7 @@
+import { Link } from "react-router-dom"
+
 export const ResultsContainer = () => {
+
 
     return (
         <div>
@@ -10,7 +13,7 @@ export const ResultsContainer = () => {
                 <p>Erradas</p>
                 <span>0</span>
             </div>
-            <button>Tentar Novamente</button>
+            <Link to={"/test/:id"}>Tentar Novamente</Link>
         </div>
     )
 }

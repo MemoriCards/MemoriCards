@@ -14,6 +14,14 @@ interface iCardContext {
   editCard: (formData: iEditCard) => Promise<void>;
   createCard: (formData: iCreateCard) => Promise<void>;
   deleteCard: () => Promise<void>;
+  corrects: number;
+  setCorrects: React.Dispatch<React.SetStateAction<number>>;
+  incorrects: number;
+  setIncorrects: React.Dispatch<React.SetStateAction<number>>;
+  unanswered: number;
+  setUnanswered: React.Dispatch<React.SetStateAction<number>>;
+  addPoint: (count: number, setCount: tPoint) => void;
+  removePoint: (count: number, setCount: tPoint) => void;
 }
 
 interface iGetResponse {
@@ -32,6 +40,7 @@ interface iCreateCard {
   answer: string;
   userId: number;
 }
+type tPoint = React.Dispatch<React.SetStateAction<number>>;
 
 export const cardContext = createContext({} as iCardContext);
 
@@ -41,6 +50,11 @@ export const CardProvider = ({ children }: iProviderProps) => {
   const [cards, setCards] = useState<iCard[] | null>([]);
 
   const [selectedCard, setSelectedCard] = useState<iCard | null>(null);
+
+  const [corrects, setCorrects] = useState(0);
+  const [incorrects, setIncorrects] = useState(0);
+  const [unanswered, setUnanswered] = useState(0);
+
 
   useEffect(() => {
     const loadCards = async () => {
@@ -55,6 +69,14 @@ export const CardProvider = ({ children }: iProviderProps) => {
     };
     loadCards();
   }, []);
+
+  const addPoint = (count: number, setCount: tPoint) => {
+    setCount(count + 1);
+  };
+
+  const removePoint = (count: number, setCount: tPoint) => {
+    setCount(count - 1)
+  };
 
   const editCard = async (formData: iEditCard) => {
     try {
@@ -101,7 +123,7 @@ export const CardProvider = ({ children }: iProviderProps) => {
   };
 
   return (
-    <cardContext.Provider value={{ cards, editCard, createCard, deleteCard }}>
+    <cardContext.Provider value={{ cards, editCard, createCard, deleteCard, corrects, incorrects, unanswered, setCorrects, setIncorrects, setUnanswered, addPoint, removePoint }}>
       {children}
     </cardContext.Provider>
   );
