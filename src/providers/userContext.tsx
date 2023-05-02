@@ -17,6 +17,7 @@ interface iUser {
 
 interface iUserContext {
   user: iUser | null;
+  navigate: (string: string) => void;
   doRegister: (formData: TRegisterValues) => Promise<void>;
   doLogin: (formData: TLoginValues) => Promise<void>;
   doLogout: () => void;
@@ -95,7 +96,7 @@ export const UserProvider = ({ children }: iUserProviderProps) => {
   };
 
   return (
-    <userContext.Provider value={{ user, doRegister, doLogin, doLogout }}>
+    <userContext.Provider value={{ user, navigate, doRegister, doLogin, doLogout }}>
       {children}
     </userContext.Provider>
   );
