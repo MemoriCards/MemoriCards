@@ -1,9 +1,11 @@
 import Logo from "../../assets/Logo.svg";
 import { NavLink } from "react-router-dom";
 import { StyledHeader } from "./style";
+import { userContext } from "../../providers/userContext";
+import { useContext } from "react";
 
 export const Header = () => {
-  const isLogged = true;
+  const { user, doLogout } = useContext(userContext);
 
   return (
     <StyledHeader>
@@ -11,7 +13,7 @@ export const Header = () => {
         <figure>
           <img src={Logo} alt="" />
         </figure>
-        {isLogged ? (
+        {!user ? (
           <nav>
             <NavLink to="/login">Entrar</NavLink>
             <NavLink to="/register">Cadastro</NavLink>
@@ -20,7 +22,7 @@ export const Header = () => {
         ) : (
           <nav>
             <button>Perfil</button>
-            <button>Sair</button>
+            <button onClick={() => doLogout()}>Sair</button>
           </nav>
         )}
       </div>
