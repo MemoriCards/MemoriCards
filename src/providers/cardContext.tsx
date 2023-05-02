@@ -21,7 +21,6 @@ interface iCardContext {
   unanswered: number;
   setUnanswered: React.Dispatch<React.SetStateAction<number>>;
   addPoint: (count: number, setCount: tPoint) => void;
-  removePoint: (count: number, setCount: tPoint) => void;
 }
 
 interface iGetResponse {
@@ -74,10 +73,6 @@ export const CardProvider = ({ children }: iProviderProps) => {
     setCount(count + 1);
   };
 
-  const removePoint = (count: number, setCount: tPoint) => {
-    setCount(count - 1)
-  };
-
   const editCard = async (formData: iEditCard) => {
     try {
       const update = await api.patch(
@@ -123,7 +118,7 @@ export const CardProvider = ({ children }: iProviderProps) => {
   };
 
   return (
-    <cardContext.Provider value={{ cards, editCard, createCard, deleteCard, corrects, incorrects, unanswered, setCorrects, setIncorrects, setUnanswered, addPoint, removePoint }}>
+    <cardContext.Provider value={{ cards, editCard, createCard, deleteCard, corrects, incorrects, unanswered, setCorrects, setIncorrects, setUnanswered, addPoint }}>
       {children}
     </cardContext.Provider>
   );
