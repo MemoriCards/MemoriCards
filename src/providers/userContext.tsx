@@ -43,7 +43,6 @@ export const UserProvider = ({ children }: iProviderProps) => {
           const { data: userData } = await api.get(`/users/${id}`);
           delete userData.password;
           setUser(userData);
-          navigate("/dashboard");
         }
       } catch (error) {
         console.error(error);

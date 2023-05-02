@@ -21,7 +21,6 @@ export const Header = () => {
           </nav>
         ) : (
           <nav>
-            <button>Perfil</button>
             <button onClick={() => doLogout()}>Sair</button>
           </nav>
         )}
