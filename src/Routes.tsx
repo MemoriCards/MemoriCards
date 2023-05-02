@@ -1,12 +1,12 @@
-import { Route, Routes } from "react-router";
+import { Route, Routes } from "react-router-dom";
 import { AboutPage } from "./pages/AboutPage";
 import { DashboardPage } from "./pages/DashboardPage";
 import { ErrorPage } from "./pages/ErrorPage";
 import { IndexPage } from "./pages/IndexPage";
 import { LoginPage } from "./pages/LoginPage";
-import { RegisterPage } from "./pages/RegisterPage";
 import { ResultPage } from "./pages/ResultPage";
 import { TestPage } from "./pages/TestPage";
+import { RegisterPage } from './pages/RegisterPage';
 
 export const RoutesMain = () => {
   return (
