@@ -1,4 +1,3 @@
-import { Header } from "../../components/Header";
 import Logo from "../../assets/Logo.svg";
 import { Link } from "react-router-dom";
 import { StyledMain } from "./style";
@@ -6,7 +5,6 @@ import { StyledMain } from "./style";
 export const IndexPage = () => {
   return (
     <>
-      <Header />
       <StyledMain>
         <div>
           <figure>
