@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { Navigate, Outlet } from "react-router";
+import { CardProvider } from "../../providers/cardContext";
 import { userContext } from "../../providers/userContext";
 import { Header } from "../Header";
 
@@ -9,7 +10,9 @@ export const ProtectedRoutes = () => {
   return user ? (
     <>
       <Header />
-      <Outlet />
+      <CardProvider>
+        <Outlet />
+      </CardProvider>
     </>
   ) : (
     <Navigate to="/" />
