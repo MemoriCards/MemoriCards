@@ -2,18 +2,22 @@ import { createContext, useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { api } from "../services/api";
 import { iProviderProps, userContext } from "./userContext";
+import { NavigateFunction, useNavigate } from "react-router";
 
-interface iCard {
+export interface iCard {
   question: string;
   answer: string;
   userId: number;
   id: number;
 }
 interface iCardContext {
-  cards: iCard[] | null;
+  cards: iCard[];
   editCard: (formData: iEditCard) => Promise<void>;
   createCard: (formData: iCreateCard) => Promise<void>;
   deleteCard: () => Promise<void>;
+  navigate: NavigateFunction;
+  isModalVisible: boolean;
+  setIsModalVisible: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 interface iGetResponse {
@@ -38,9 +42,14 @@ export const cardContext = createContext({} as iCardContext);
 export const CardProvider = ({ children }: iProviderProps) => {
   const { user } = useContext(userContext);
 
-  const [cards, setCards] = useState<iCard[] | null>([]);
+  const [cards, setCards] = useState<iCard[]>([]);
 
   const [selectedCard, setSelectedCard] = useState<iCard | null>(null);
+
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const navigate = useNavigate();
+
 
   useEffect(() => {
     const loadCards = async () => {
@@ -101,7 +110,7 @@ export const CardProvider = ({ children }: iProviderProps) => {
   };
 
   return (
-    <cardContext.Provider value={{ cards, editCard, createCard, deleteCard }}>
+    <cardContext.Provider value={{ cards, editCard, createCard, deleteCard, navigate, setIsModalVisible, isModalVisible }}>
       {children}
     </cardContext.Provider>
   );
