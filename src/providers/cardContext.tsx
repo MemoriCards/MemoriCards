@@ -15,9 +15,17 @@ interface iCardContext {
   editCard: (formData: iEditCard) => Promise<void>;
   createCard: (formData: iCreateCard) => Promise<void>;
   deleteCard: () => Promise<void>;
+  corrects: number;
+  setCorrects: React.Dispatch<React.SetStateAction<number>>;
+  incorrects: number;
+  setIncorrects: React.Dispatch<React.SetStateAction<number>>;
+  unanswered: number;
+  setUnanswered: React.Dispatch<React.SetStateAction<number>>;
+  addPoint: (count: number, setCount: tPoint) => void;
   navigate: NavigateFunction;
   isModalVisible: boolean;
   setIsModalVisible: React.Dispatch<React.SetStateAction<boolean>>
+
 }
 
 interface iGetResponse {
@@ -36,6 +44,7 @@ interface iCreateCard {
   answer: string;
   userId: number;
 }
+type tPoint = React.Dispatch<React.SetStateAction<number>>;
 
 export const cardContext = createContext({} as iCardContext);
 
@@ -46,9 +55,13 @@ export const CardProvider = ({ children }: iProviderProps) => {
 
   const [selectedCard, setSelectedCard] = useState<iCard | null>(null);
 
-  const [isModalVisible, setIsModalVisible] = useState(false);
 
+  const [corrects, setCorrects] = useState(0);
+  const [incorrects, setIncorrects] = useState(0);
+  const [unanswered, setUnanswered] = useState(0);
+  const [isModalVisible, setIsModalVisible] = useState(false);
   const navigate = useNavigate();
+
 
 
   useEffect(() => {
@@ -64,6 +77,10 @@ export const CardProvider = ({ children }: iProviderProps) => {
     };
     loadCards();
   }, []);
+
+  const addPoint = (count: number, setCount: tPoint) => {
+    setCount(count + 1);
+  };
 
   const editCard = async (formData: iEditCard) => {
     try {
@@ -110,7 +127,7 @@ export const CardProvider = ({ children }: iProviderProps) => {
   };
 
   return (
-    <cardContext.Provider value={{ cards, editCard, createCard, deleteCard, navigate, setIsModalVisible, isModalVisible }}>
+    <cardContext.Provider value={{ cards, editCard, createCard, deleteCard, navigate, setIsModalVisible, isModalVisible, incorrects, unanswered, setCorrects, setIncorrects, setUnanswered, addPoint }}>
       {children}
     </cardContext.Provider>
   );
