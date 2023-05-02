@@ -1,14 +1,15 @@
-import { useState } from "react"
+import { useContext } from "react"
 import { CollectionCardList } from "./CollectionCardList"
+import { cardContext } from "../../providers/cardContext";
 
 export const CollectionList = () => {
-    const [isModalVisible, setIsmodalVisible] = useState(false);
+    const { navigate, setIsModalVisible } = useContext(cardContext);
 
     return (
         <section>
             <div>
-                <button>Criar Card</button>
-                <button>Iniciar teste</button>
+                <button type="button" onClick={() => {setIsModalVisible(true)}}>Criar Card</button>
+                <button type="button" onClick={(() => navigate("/test/:id"))}>Iniciar teste</button>
             </div>
 
             <CollectionCardList />
