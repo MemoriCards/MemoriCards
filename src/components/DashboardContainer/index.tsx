@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { CardList } from "./Cardlist"
 
 export const DashboardContainer = () => {
@@ -8,10 +9,10 @@ export const DashboardContainer = () => {
                 <i className="fa-solid fa-plus"></i>
                     Criar Card
                 </button>
-                <button>
+                <Link to={"/test/1"}>
                 <i className="fa-sharp fa-regular fa-circle-play"></i>
                     Iniciar Teste
-                </button>
+                </Link>
             </div>
             <CardList />
         </div>

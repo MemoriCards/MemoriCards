@@ -1,17 +1,20 @@
+import { useContext } from "react"
 import { Link } from "react-router-dom"
+import { cardContext } from "../../providers/cardContext"
 
 export const ResultsContainer = () => {
 
+    const {corrects, incorrects, unanswered} = useContext(cardContext);
 
     return (
         <div>
             <div>
                 <p>Acertos</p>
-                <span>0</span>
+                <span>{corrects}</span>
                 <p>Não respondida</p>
-                <span>0</span>
+                <span>{incorrects}</span>
                 <p>Erradas</p>
-                <span>0</span>
+                <span>{unanswered}</span>
             </div>
             <Link to={"/test/:id"}>Tentar Novamente</Link>
         </div>
