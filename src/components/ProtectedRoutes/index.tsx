@@ -14,7 +14,5 @@ export const ProtectedRoutes = () => {
         <Outlet />
       </CardProvider>
     </>
-  ) : (
-    <Navigate to="/" />
-  );
+  ) : null;
 };
