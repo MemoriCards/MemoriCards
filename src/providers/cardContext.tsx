@@ -3,7 +3,7 @@ import { createContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { api } from "../services/api";
-import { iUserProviderProps } from "./userContext";
+import { iProviderProps } from "./userContext";
 
 interface iCardContext {
   cards: iCard | null;
@@ -13,7 +13,7 @@ interface iCard {}
 
 export const cardContext = createContext({} as iCardContext);
 
-export const CardProvider = ({ children }: iUserProviderProps) => {
+export const CardProvider = ({ children }: iProviderProps) => {
   const [cards, setCards] = useState<iCard | null>(null);
 
   const navigate = useNavigate();
