@@ -1,12 +1,21 @@
-export const CardItem = () => {
+import { useContext } from "react"
+import { cardContext, iCard } from "../../../../providers/cardContext"
+
+
+interface ICardProps {
+    card: iCard;
+}
+
+export const CardItem = ({ card }: ICardProps) => {
+    const { deleteCard, editCard } = useContext(cardContext);
     return(
         <li>
             <div>
-                <button></button>
-                <button></button>
+                <button onClick={(() => editCard)}>Edit</button>
+                <button onClick={(() => deleteCard)}>Delete</button>
             </div>
-            <h3></h3>
-            <button></button>
+            <h3>{card.question}</h3>
+            <button type="button">Show aswer</button>
         </li>
     )
 }
