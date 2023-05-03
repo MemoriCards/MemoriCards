@@ -34,6 +34,9 @@ interface iCardContext {
   firstCardId: number;
   goNextCard: (currentIndex: number) => void;
   validateAnswer: (userAnswer: string) => void;
+  isEditModalVisible: boolean;
+  setEditIsModalVisible: React.Dispatch<React.SetStateAction<boolean>>
+
 }
 
 interface iGetResponse {
@@ -70,6 +73,7 @@ export const CardProvider = ({ children }: iProviderProps) => {
   const [unanswered, setUnanswered] = useState(0);
 
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [isEditModalVisible, setEditIsModalVisible] = useState(false);
 
   const navigate = useNavigate();
 
@@ -112,6 +116,7 @@ export const CardProvider = ({ children }: iProviderProps) => {
         const updatedCards = cards.slice();
         updatedCards.splice(cardIndex, 1, update.data);
         setCards(updatedCards);
+        setEditIsModalVisible(false);
         toast.success("Card editado com sucesso!");
       }
     } catch (error) {
@@ -126,6 +131,7 @@ export const CardProvider = ({ children }: iProviderProps) => {
       if (updatedCards != undefined) {
         updatedCards?.push(update.data);
         setCards(updatedCards);
+        setIsModalVisible(false);
         toast.success("Card  cadastrado com sucesso!");
       }
     } catch (error) {
@@ -142,6 +148,7 @@ export const CardProvider = ({ children }: iProviderProps) => {
       }
     } catch (error) {
       toast.error("Algo deu errado. Tente novamente!");
+      console.log(error);
     }
   };
 
@@ -208,6 +215,8 @@ export const CardProvider = ({ children }: iProviderProps) => {
         firstCardId,
         goNextCard,
         validateAnswer,
+        isEditModalVisible,
+        setEditIsModalVisible
       }}
     >
       {children}
