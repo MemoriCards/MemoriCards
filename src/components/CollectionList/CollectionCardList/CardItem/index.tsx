@@ -1,21 +1,22 @@
 import { useContext } from "react"
 import { cardContext, iCard } from "../../../../providers/cardContext"
+import { EditCardModal } from "../../../Modal/EditModal";
 
 
-interface ICardProps {
+export interface ICardProps {
     card: iCard;
 }
 
 export const CardItem = ({ card }: ICardProps) => {
-    const { deleteCard, editCard } = useContext(cardContext);
+    const { deleteCard, setEditIsModalVisible, isEditModalVisible } = useContext(cardContext);
     return(
         <li>
+             {isEditModalVisible ? <EditCardModal card={card} /> : null}
             <div>
-                <button onClick={(() => editCard)}><i className="fa-sharp fa-solid fa-trash"></i></button>
-                <button onClick={(() => deleteCard)}></button>
+                <button onClick={() => {deleteCard(card.id)}}><i className="fa-sharp fa-solid fa-trash"></i></button>
+                <button onClick={() => {setEditIsModalVisible(true)}}>Editar</button>
             </div>
             <h3>{card.question}</h3>
-            <button type="button"><i className="fa-solid fa-arrow-pointer"/></button>
         </li>
     )
 }
