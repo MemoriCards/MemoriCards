@@ -32,11 +32,19 @@ export const AboutPage = () => {
               <h4>Luana Carneiro</h4>
               <h5>Tech Lead</h5>
               <span>
-                <a href="https://www.google.com/">
+                <a
+                  href="https://www.linkedin.com/in/luanamariacarneiro/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src={logo_linkedin} alt="" />
                 </a>
 
-                <a href="https://www.google.com/">
+                <a
+                  href="https://github.com/Luhmaria"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src={logo_github} alt="" />
                 </a>
               </span>
@@ -50,11 +58,19 @@ export const AboutPage = () => {
               <h4>Thomaz Rosseti</h4>
               <h5>Scrum Master </h5>
               <span>
-                <a href="https://www.google.com/">
+                <a
+                  href="https://www.linkedin.com/in/thomaz-rosseti-coelho-ti369/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src={logo_linkedin} alt="" />
                 </a>
 
-                <a href="https://www.google.com/">
+                <a
+                  href="https://github.com/ThomazRc"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src={logo_github} alt="" />
                 </a>
               </span>
@@ -65,14 +81,22 @@ export const AboutPage = () => {
                 src="https://avatars.githubusercontent.com/u/98988774?v=4"
                 alt="#"
               />
-              <h4>Eric Vinicius F. Silva</h4>
+              <h4>Eric Vinicius</h4>
               <h5>Product Owner</h5>
               <span>
-                <a href="https://www.google.com/">
+                <a
+                  href="https://www.linkedin.com/in/eric-vinicius-felix-silva-457b63249/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src={logo_linkedin} alt="" />
                 </a>
 
-                <a href="https://www.google.com/">
+                <a
+                  href="https://github.com/Ericvini000"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src={logo_github} alt="" />
                 </a>
               </span>
@@ -86,11 +110,19 @@ export const AboutPage = () => {
               <h4>Matheus Rosa</h4>
               <h5>Quality Assurance</h5>
               <span>
-                <a href="https://www.google.com/">
+                <a
+                  href="https://www.linkedin.com/in/mathrosa96/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src={logo_linkedin} alt="" />
                 </a>
 
-                <a href="https://www.google.com/">
+                <a
+                  href="https://github.com/math-rosa"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src={logo_github} alt="" />
                 </a>
               </span>
@@ -104,11 +136,19 @@ export const AboutPage = () => {
               <h4>Nil Joshua</h4>
               <h5>Quality Assurance</h5>
               <span>
-                <a href="https://www.google.com/">
+                <a
+                  href="https://www.linkedin.com/in/niljoshua/overlay/contact-info/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src={logo_linkedin} alt="" />
                 </a>
 
-                <a href="https://www.google.com/">
+                <a
+                  href="https://github.com/niljoshua"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src={logo_github} alt="" />
                 </a>
               </span>
