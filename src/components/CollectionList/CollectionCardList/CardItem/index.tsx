@@ -11,11 +11,11 @@ export const CardItem = ({ card }: ICardProps) => {
     return(
         <li>
             <div>
-                <button onClick={(() => editCard)}>Edit</button>
-                <button onClick={(() => deleteCard)}>Delete</button>
+                <button onClick={(() => editCard)}><i className="fa-sharp fa-solid fa-trash"></i></button>
+                <button onClick={(() => deleteCard)}></button>
             </div>
             <h3>{card.question}</h3>
-            <button type="button">Show aswer</button>
+            <button type="button"><i className="fa-solid fa-arrow-pointer"/></button>
         </li>
     )
 }
