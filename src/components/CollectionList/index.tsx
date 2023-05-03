@@ -39,7 +39,7 @@ export const CollectionList = () => {
             }
           }}
         >
-          <i className="fa-sharp fa-regular fa-circle-play"></i> Iniciar teste
+          <i className="fa-sharp fa-regular fa-circle-play"></i>Iniciar teste
         </button>
       </StyledDiv>
 
