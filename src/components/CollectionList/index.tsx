@@ -3,22 +3,23 @@ import { CollectionCardList } from "./CollectionCardList";
 import { cardContext } from "../../providers/cardContext";
 import { Link } from "react-router-dom";
 import { userContext } from "../../providers/userContext";
+import { StyledSection, StyledDiv } from "./style";
 
 export const CollectionList = () => {
-
   const { navigate, setIsModalVisible, firstCardId, setIsTesting } =
     useContext(cardContext);
 
   return (
-    <section>
-      <div>
+    <StyledSection>
+      <StyledDiv>
         <button
           type="button"
           onClick={() => {
             setIsModalVisible(true);
           }}
-        > <i className="fa-solid fa-plus"></i>
-          Criar Card
+        >
+          {" "}
+          <i className="fa-solid fa-plus"></i> Criar Card
         </button>
         <button
           type="button"
@@ -27,11 +28,11 @@ export const CollectionList = () => {
             navigate(`/test/${firstCardId}`);
           }}
         >
-          <i className="fa-sharp fa-regular fa-circle-play"></i>Iniciar teste
+          <i className="fa-sharp fa-regular fa-circle-play"></i> Iniciar teste
         </button>
-      </div>
+      </StyledDiv>
 
       <CollectionCardList />
-    </section>
+    </StyledSection>
   );
 };
