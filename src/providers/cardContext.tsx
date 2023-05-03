@@ -12,9 +12,9 @@ export interface iCard {
 }
 interface iCardContext {
   cards: iCard[];
-  editCard: (formData: iEditCard) => Promise<void>;
+  editCard: (formData: iEditCard, id: number) => Promise<void>;
   createCard: (formData: iCreateCard) => Promise<void>;
-  deleteCard: () => Promise<void>;
+  deleteCard: (id: number) => Promise<void>;
   corrects: number;
   setCorrects: React.Dispatch<React.SetStateAction<number>>;
   incorrects: number;
@@ -25,7 +25,6 @@ interface iCardContext {
   navigate: NavigateFunction;
   isModalVisible: boolean;
   setIsModalVisible: React.Dispatch<React.SetStateAction<boolean>>;
-  setSelectedCard: React.Dispatch<React.SetStateAction<iCard | null>>;
   isTesting: boolean;
   setIsTesting: React.Dispatch<React.SetStateAction<boolean>>;
   cardInTest: iCard | null;
@@ -34,6 +33,15 @@ interface iCardContext {
   firstCardId: number;
   goNextCard: (currentIndex: number) => void;
   validateAnswer: (userAnswer: string) => void;
+  collectionTitle: string;
+  setCollectionTitle: React.Dispatch<React.SetStateAction<string>>;
+  inputValue: boolean;
+  setInputValue: React.Dispatch<React.SetStateAction<boolean>>;
+  setInicialValues: () => void;
+  isEditModalVisible: boolean;
+  setEditIsModalVisible: React.Dispatch<React.SetStateAction<boolean>>;
+  selectedCard: iCard | null;
+  setSelectedCard: React.Dispatch<React.SetStateAction<iCard | null>>;
 }
 
 interface iGetResponse {
@@ -63,19 +71,23 @@ export const CardProvider = ({ children }: iProviderProps) => {
 
   const [firstCardId, setFirstCardId] = useState(0);
 
-  const [selectedCard, setSelectedCard] = useState<iCard | null>(null);
-
   const [corrects, setCorrects] = useState(0);
   const [incorrects, setIncorrects] = useState(0);
   const [unanswered, setUnanswered] = useState(0);
 
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [isEditModalVisible, setEditIsModalVisible] = useState(false);
 
   const navigate = useNavigate();
 
   const [isTesting, setIsTesting] = useState(false);
 
   const [cardInTest, setCardInTest] = useState<iCard | null>(null);
+
+  const [collectionTitle, setCollectionTitle] = useState("");
+  const [inputValue, setInputValue] = useState(false);
+
+  const [selectedCard, setSelectedCard] = useState<iCard | null>(null);
 
   useEffect(() => {
     const loadCards = async () => {
@@ -97,35 +109,44 @@ export const CardProvider = ({ children }: iProviderProps) => {
     }
   }, [cards]);
 
+  const setInicialValues = () => {
+    setCorrects(0);
+    setIncorrects(0);
+    setUnanswered(0);
+  };
+
   const addPoint = (count: number, setCount: tPoint) => {
     setCount(count + 1);
   };
 
-  const editCard = async (formData: iEditCard) => {
+  const editCard = async (formData: iEditCard, id: number) => {
     try {
-      const update = await api.patch(
-        `/flashcards/${selectedCard?.id}`,
-        formData
-      );
-      const cardIndex = cards?.findIndex((card) => card.id == selectedCard?.id);
+      const update = await api.patch(`/flashcards/${id}`, formData);
+      const cardIndex = cards?.findIndex((card) => card.id == id);
       if (cardIndex !== undefined && cards != null) {
         const updatedCards = cards.slice();
         updatedCards.splice(cardIndex, 1, update.data);
         setCards(updatedCards);
+        setEditIsModalVisible(false);
         toast.success("Card editado com sucesso!");
       }
     } catch (error) {
       toast.error("Algo deu errado. Tente novamente!");
+      console.log(error);
     }
   };
 
   const createCard = async (formData: iCreateCard) => {
     try {
-      const update = await api.post("flashcards", {...formData, userId: user?.id});
+      const update = await api.post("flashcards", {
+        ...formData,
+        userId: user?.id,
+      });
       const updatedCards = cards?.slice();
       if (updatedCards != undefined) {
         updatedCards?.push(update.data);
         setCards(updatedCards);
+        setIsModalVisible(false);
         toast.success("Card  cadastrado com sucesso!");
       }
     } catch (error) {
@@ -133,11 +154,11 @@ export const CardProvider = ({ children }: iProviderProps) => {
     }
   };
 
-  const deleteCard = async () => {
+  const deleteCard = async (id: number) => {
     try {
-      await api.delete(`/flashcards/${selectedCard?.id}`);
+      await api.delete(`/flashcards/${id}`);
       if (cards != undefined) {
-        setCards(cards.filter((card) => card.id != selectedCard?.id));
+        setCards(cards.filter((card) => card.id != id));
         toast.success("Card deletado com sucesso!");
       }
     } catch (error) {
@@ -189,7 +210,6 @@ export const CardProvider = ({ children }: iProviderProps) => {
         editCard,
         createCard,
         deleteCard,
-        setSelectedCard,
         navigate,
         setIsModalVisible,
         isModalVisible,
@@ -208,6 +228,15 @@ export const CardProvider = ({ children }: iProviderProps) => {
         firstCardId,
         goNextCard,
         validateAnswer,
+        inputValue,
+        setInputValue,
+        collectionTitle,
+        setCollectionTitle,
+        setInicialValues,
+        isEditModalVisible,
+        setEditIsModalVisible,
+        selectedCard,
+        setSelectedCard,
       }}
     >
       {children}

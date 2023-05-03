@@ -4,7 +4,7 @@ import { cardContext } from "../../providers/cardContext";
 import { ResultStyleDiv } from './style';
 
 export const ResultPage = () => {
-  const { navigate, setIsTesting, setCorrects, setIncorrects, setUnanswered } =
+  const { navigate, setIsTesting, setInicialValues } =
     useContext(cardContext);
   return (
     <>
@@ -14,6 +14,7 @@ export const ResultPage = () => {
       <button
         onClick={() => {
           setIsTesting(false);
+          setInicialValues()
           navigate("/dashboard");
         }}
       >

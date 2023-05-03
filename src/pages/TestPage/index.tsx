@@ -24,7 +24,7 @@ export const TestPage = () => {
     if (cardID) {
       loadCardInTest(cardID);
     }
-  }, []);
+  }, [cardID]);
 
   const currentIndex = cards.findIndex((card) => card.id == Number(cardID));
 
