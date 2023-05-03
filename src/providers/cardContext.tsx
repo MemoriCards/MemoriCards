@@ -47,10 +47,10 @@ interface iEditCard {
   question: string;
   answer: string;
 }
-interface iCreateCard {
+export interface iCreateCard {
   question: string;
   answer: string;
-  userId: number;
+  userId?: number;
 }
 type tPoint = React.Dispatch<React.SetStateAction<number>>;
 
@@ -121,7 +121,7 @@ export const CardProvider = ({ children }: iProviderProps) => {
 
   const createCard = async (formData: iCreateCard) => {
     try {
-      const update = await api.post("flashcards", formData);
+      const update = await api.post("flashcards", {...formData, userId: user?.id});
       const updatedCards = cards?.slice();
       if (updatedCards != undefined) {
         updatedCards?.push(update.data);
