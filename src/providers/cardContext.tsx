@@ -40,6 +40,8 @@ interface iCardContext {
   setInicialValues: () => void;
   isEditModalVisible: boolean;
   setEditIsModalVisible: React.Dispatch<React.SetStateAction<boolean>>;
+  selectedCard: iCard | null;
+  setSelectedCard: React.Dispatch<React.SetStateAction<iCard | null>>;
 }
 
 interface iGetResponse {
@@ -84,6 +86,8 @@ export const CardProvider = ({ children }: iProviderProps) => {
 
   const [collectionTitle, setCollectionTitle] = useState("");
   const [inputValue, setInputValue] = useState(false);
+
+  const [selectedCard, setSelectedCard] = useState<iCard | null>(null);
 
   useEffect(() => {
     const loadCards = async () => {
@@ -231,6 +235,8 @@ export const CardProvider = ({ children }: iProviderProps) => {
         setInicialValues,
         isEditModalVisible,
         setEditIsModalVisible,
+        selectedCard,
+        setSelectedCard,
       }}
     >
       {children}
