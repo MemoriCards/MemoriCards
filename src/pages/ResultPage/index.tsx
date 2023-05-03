@@ -1,10 +1,20 @@
-import { Link } from "react-router-dom";
+import { useContext } from "react";
 import { ResultsContainer } from "../../components/ResultsContainer";
+import { cardContext } from "../../providers/cardContext";
 
 export const ResultPage = () => {
+  const { navigate, setIsTesting, setCorrects, setIncorrects, setUnanswered } =
+    useContext(cardContext);
   return (
     <>
-      <Link to={"/dashboard"}>Voltar</Link>
+      <button
+        onClick={() => {
+          setIsTesting(false);
+          navigate("/dashboard");
+        }}
+      >
+        Voltar
+      </button>
       <ResultsContainer />
     </>
   );
