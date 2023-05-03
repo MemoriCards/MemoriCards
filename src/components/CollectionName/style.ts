@@ -6,8 +6,11 @@ export const StyledForm = styled.form`
 import Background from "../../assets/Background.png";
 
 export const StyledForm = styled.form`
+<<<<<<< HEAD
 
 >>>>>>> 09e8cea (fix : remove conflicts)
+=======
+>>>>>>> ea61099 (feat: cardItem)
   display: flex;
   gap: 1rem;
   align-items: center;
