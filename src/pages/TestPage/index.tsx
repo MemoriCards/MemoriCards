@@ -21,6 +21,7 @@ export const TestPage = () => {
   } = useContext(cardContext);
 
   useEffect(() => {
+
     if (cardID) {
       loadCardInTest(cardID);
     }
