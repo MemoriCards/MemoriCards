@@ -1,11 +1,15 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
 import { cardContext } from "../../providers/cardContext";
 import { ResultsStyleDiv } from "./style";
 
 export const ResultsContainer = () => {
-  const { corrects, incorrects, unanswered, firstCardId } =
+  const { corrects, incorrects, unanswered, firstCardId, navigate, setInicialValues } =
     useContext(cardContext);
+
+    const tryAgain = () => {
+      setInicialValues()
+      navigate(`/test/${firstCardId}`);
+    }
   return (
     <ResultsStyleDiv>
       <div className="divControler">

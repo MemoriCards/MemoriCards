@@ -5,7 +5,7 @@ import { cardContext } from "../../providers/cardContext";
 import { CreateCardModal } from "../../components/Modal/CreateModal";
 
 export const DashboardPage = () => {
-    const { isModalVisible } = useContext(cardContext);
+  const { isModalVisible } = useContext(cardContext);
   return (
     <>
       <main>
