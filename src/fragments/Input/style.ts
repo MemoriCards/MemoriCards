@@ -17,6 +17,7 @@ export const InputDiv = styled.div `
         border-right-width: 0;
         border-left-width: 0;
         border-color: var(--grey-2);
-        background-color: var(--grey-0)
+        background-color: var(--grey-0);
+        padding: 1px;
     }
 `
