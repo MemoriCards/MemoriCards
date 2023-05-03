@@ -12,9 +12,9 @@ export interface iCard {
 }
 interface iCardContext {
   cards: iCard[];
-  editCard: (formData: iEditCard, id: number) => Promise<void>
+  editCard: (formData: iEditCard, id: number) => Promise<void>;
   createCard: (formData: iCreateCard) => Promise<void>;
-  deleteCard: (id: number) => Promise<void>
+  deleteCard: (id: number) => Promise<void>;
   corrects: number;
   setCorrects: React.Dispatch<React.SetStateAction<number>>;
   incorrects: number;
@@ -32,14 +32,14 @@ interface iCardContext {
   loadCardInTest: (id: string) => Promise<void>;
   firstCardId: number;
   goNextCard: (currentIndex: number) => void;
-  validateAnswer: (userAnswer: string) => void; 
+  validateAnswer: (userAnswer: string) => void;
   collectionTitle: string;
   setCollectionTitle: React.Dispatch<React.SetStateAction<string>>;
   inputValue: boolean;
   setInputValue: React.Dispatch<React.SetStateAction<boolean>>;
   setInicialValues: () => void;
   isEditModalVisible: boolean;
-  setEditIsModalVisible: React.Dispatch<React.SetStateAction<boolean>>
+  setEditIsModalVisible: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 interface iGetResponse {
@@ -105,12 +105,11 @@ export const CardProvider = ({ children }: iProviderProps) => {
     }
   }, [cards]);
 
-
   const setInicialValues = () => {
-     setCorrects(0);
-     setIncorrects(0);
-     setUnanswered(0);
-  }
+    setCorrects(0);
+    setIncorrects(0);
+    setUnanswered(0);
+  };
 
   const addPoint = (count: number, setCount: tPoint) => {
     setCount(count + 1);
@@ -118,10 +117,7 @@ export const CardProvider = ({ children }: iProviderProps) => {
 
   const editCard = async (formData: iEditCard, id: number) => {
     try {
-      const update = await api.patch(
-        `/flashcards/${id}`,
-        formData
-      );
+      const update = await api.patch(`/flashcards/${id}`, formData);
       const cardIndex = cards?.findIndex((card) => card.id == id);
       if (cardIndex !== undefined && cards != null) {
         const updatedCards = cards.slice();
@@ -138,7 +134,10 @@ export const CardProvider = ({ children }: iProviderProps) => {
 
   const createCard = async (formData: iCreateCard) => {
     try {
-      const update = await api.post("flashcards", { ...formData, userId: user?.id });
+      const update = await api.post("flashcards", {
+        ...formData,
+        userId: user?.id,
+      });
       const updatedCards = cards?.slice();
       if (updatedCards != undefined) {
         updatedCards?.push(update.data);
@@ -228,10 +227,10 @@ export const CardProvider = ({ children }: iProviderProps) => {
         inputValue,
         setInputValue,
         collectionTitle,
-        setCollectionTitle
-        setInicialValues
+        setCollectionTitle,
+        setInicialValues,
         isEditModalVisible,
-        setEditIsModalVisible
+        setEditIsModalVisible,
       }}
     >
       {children}
