@@ -1,18 +1,21 @@
+import { useContext } from "react";
+import { ResultsContainer } from "../../components/ResultsContainer";
+import { cardContext } from "../../providers/cardContext";
+
 export const ResultPage = () => {
+  const { navigate, setIsTesting, setCorrects, setIncorrects, setUnanswered } =
+    useContext(cardContext);
   return (
     <>
-      <button>Voltar</button>
-      <div>
-        <div>
-          <p>Acertos</p>
-          <span>0</span>
-          <p>Não respondida</p>
-          <span>0</span>
-          <p>Erradas</p>
-          <span>0</span>
-        </div>
-        <button>Tentar Novamente</button>
-      </div>
+      <button
+        onClick={() => {
+          setIsTesting(false);
+          navigate("/dashboard");
+        }}
+      >
+        Voltar
+      </button>
+      <ResultsContainer />
     </>
   );
 };
