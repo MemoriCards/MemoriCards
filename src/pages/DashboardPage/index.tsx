@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { CollectionList } from "../../components/CollectionList";
 import { CollectionName } from "../../components/CollectionName";
 import { cardContext } from "../../providers/cardContext";
-import { CreateCardModal } from "../../components/Modal";
+import { CreateCardModal } from "../../components/Modal/CreateModal";
 
 export const DashboardPage = () => {
     const { isModalVisible } = useContext(cardContext);
