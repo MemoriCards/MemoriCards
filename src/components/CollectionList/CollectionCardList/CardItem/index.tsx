@@ -1,9 +1,9 @@
 import { useContext } from "react";
 import { cardContext, iCard } from "../../../../providers/cardContext";
-import { Styledli } from "./style";
 import { EditCardModal } from "../../../Modal/EditModal";
+import { Styledli } from "./style";
 
-interface ICardProps {
+export interface ICardProps {
   card: iCard;
 }
 
