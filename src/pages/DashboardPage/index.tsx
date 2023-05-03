@@ -6,11 +6,10 @@ import { CreateCardModal } from "../../components/Modal/CreateModal";
 import { EditCardModal } from "../../components/Modal/EditModal";
 
 export const DashboardPage = () => {
-    const { isModalVisible, isEditModalVisible } = useContext(cardContext);
+    const { isModalVisible } = useContext(cardContext);
   return (
     <>
       <main>
-        {isEditModalVisible ? <EditCardModal /> : null}
         <CollectionName />
         <CollectionList />
         {isModalVisible ? <CreateCardModal /> : null}
