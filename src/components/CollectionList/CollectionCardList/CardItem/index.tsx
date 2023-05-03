@@ -7,28 +7,15 @@ export interface ICardProps {
 }
 
 export const CardItem = ({ card }: ICardProps) => {
-  const { deleteCard, setEditIsModalVisible, setSelectedCard } =
-    useContext(cardContext);
-  return (
-    <li>
-      <div>
-        <button
-          onClick={() => {
-            deleteCard(card.id);
-          }}
-        >
-          <i className="fa-sharp fa-solid fa-trash"></i>
-        </button>
-        <button
-          onClick={() => {
-            setSelectedCard(card);
-            setEditIsModalVisible(true);
-          }}
-        >
-          Editar
-        </button>
-      </div>
-      <h3>{card.question}</h3>
-    </li>
-  );
-};
+    const { deleteCard, editCard } = useContext(cardContext);
+    return(
+        <li>
+            <div>
+                <button onClick={(() => editCard)}><i className="fa-sharp fa-solid fa-trash"></i></button>
+                <button onClick={(() => deleteCard)}></button>
+            </div>
+            <h3>{card.question}</h3>
+            <button type="button"><i className="fa-solid fa-arrow-pointer"/></button>
+        </li>
+    )
+}
