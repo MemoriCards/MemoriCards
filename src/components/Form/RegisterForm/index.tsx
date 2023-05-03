@@ -4,6 +4,7 @@ import { Input } from '../../../fragments/Input/index';
 import { RegisterFormSchema, TRegisterValues } from './RegisterFormSchema';
 import { useContext } from 'react';
 import { userContext } from '../../../providers/userContext';
+import { RegisterDivStyle } from './style';
 
 export const RegisterForm = () => {
     const { register, handleSubmit, formState: { errors } } = useForm<TRegisterValues>({
@@ -15,6 +16,7 @@ export const RegisterForm = () => {
 
     return (
         <>
+            <RegisterDivStyle>
             <h1>Crie sua conta</h1>
             <form onSubmit={handleSubmit(submit)}>
                 <Input label='Email' type='email' {...register("email")} />
@@ -25,6 +27,7 @@ export const RegisterForm = () => {
                 {errors.confirm ? <p>{errors.confirm.message}</p> : null}
                 <button type="submit">Criar conta</button>
             </form>
+            </RegisterDivStyle>
         </>
     )
 }

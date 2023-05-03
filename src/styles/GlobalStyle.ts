@@ -1,13 +1,17 @@
 import { createGlobalStyle } from "styled-components";
+import Background from "../assets/Background.png";
 
 export const GlobalStyle = createGlobalStyle`
 
 :root {
     --color-primary-1: #0E387A;
     --color-primary-2: #052A88;
+    --color-secundary: #9FAFCA;
+    --color-secundary-3: #1A59FC;
     --red: #FF4B4B;
     --green: #5ACC05;
     --yellow: #FFC800;
+    --grey-3: #696969;
     --grey-2: #BFBFBF;
     --grey-1 : #EBEBEB; 
     --grey-0 : #F4F4F4; 
@@ -19,6 +23,12 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing:border-box;
     font-family: "Inter", sans-serif;
     text-decoration:none;  
+}
+
+body {
+    background-image: url(${Background});
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 ul, ol, li{
