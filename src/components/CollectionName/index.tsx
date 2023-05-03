@@ -1,8 +1,10 @@
+import { StyledForm } from "./style";
+
 export const CollectionName = () => {
     return (
-        <form>
+        <StyledForm>
             <input type="text" placeholder="De um nome para sua coleção de cartões..." />
             <button type="submit">OK</button>
-        </form>
+        </StyledForm>
     )
 }
