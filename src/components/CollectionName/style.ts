@@ -1,6 +1,13 @@
 import styled from "styled-components";
+<<<<<<< HEAD
 
 export const StyledForm = styled.form`
+=======
+import Background from "../../assets/Background.png";
+
+export const StyledForm = styled.form`
+
+>>>>>>> 09e8cea (fix : remove conflicts)
   display: flex;
   gap: 1rem;
   align-items: center;
