@@ -24,8 +24,8 @@ interface iCardContext {
   addPoint: (count: number, setCount: tPoint) => void;
   navigate: NavigateFunction;
   isModalVisible: boolean;
-  setIsModalVisible: React.Dispatch<React.SetStateAction<boolean>>
-
+  setIsModalVisible: React.Dispatch<React.SetStateAction<boolean>>;
+  setSelectedCard: React.Dispatch<React.SetStateAction<iCard | null>>;
 }
 
 interface iGetResponse {
@@ -55,14 +55,11 @@ export const CardProvider = ({ children }: iProviderProps) => {
 
   const [selectedCard, setSelectedCard] = useState<iCard | null>(null);
 
-
   const [corrects, setCorrects] = useState(0);
   const [incorrects, setIncorrects] = useState(0);
   const [unanswered, setUnanswered] = useState(0);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const navigate = useNavigate();
-
-
 
   useEffect(() => {
     const loadCards = async () => {
@@ -127,7 +124,25 @@ export const CardProvider = ({ children }: iProviderProps) => {
   };
 
   return (
-    <cardContext.Provider value={{ cards, editCard, createCard, deleteCard, navigate, setIsModalVisible, isModalVisible, incorrects, unanswered, setCorrects, setIncorrects, setUnanswered, addPoint }}>
+    <cardContext.Provider
+      value={{
+        cards,
+        editCard,
+        createCard,
+        deleteCard,
+        setSelectedCard,
+        navigate,
+        setIsModalVisible,
+        isModalVisible,
+        corrects,
+        incorrects,
+        unanswered,
+        setCorrects,
+        setIncorrects,
+        setUnanswered,
+        addPoint,
+      }}
+    >
       {children}
     </cardContext.Provider>
   );
