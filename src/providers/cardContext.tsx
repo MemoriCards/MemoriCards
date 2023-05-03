@@ -33,9 +33,9 @@ interface iCardContext {
   firstCardId: number;
   goNextCard: (currentIndex: number) => void;
   validateAnswer: (userAnswer: string) => void;
+  setInicialValues: () => void;
   isEditModalVisible: boolean;
   setEditIsModalVisible: React.Dispatch<React.SetStateAction<boolean>>
-
 }
 
 interface iGetResponse {
@@ -78,6 +78,7 @@ export const CardProvider = ({ children }: iProviderProps) => {
 
   const [cardInTest, setCardInTest] = useState<iCard | null>(null);
 
+  
   useEffect(() => {
     const loadCards = async () => {
       try {
@@ -97,6 +98,13 @@ export const CardProvider = ({ children }: iProviderProps) => {
       setFirstCardId(cards[0].id);
     }
   }, [cards]);
+
+
+  const setInicialValues = () => {
+     setCorrects(0);
+     setIncorrects(0);
+     setUnanswered(0);
+  }
 
   const addPoint = (count: number, setCount: tPoint) => {
     setCount(count + 1);
@@ -211,6 +219,7 @@ export const CardProvider = ({ children }: iProviderProps) => {
         firstCardId,
         goNextCard,
         validateAnswer,
+        setInicialValues
         isEditModalVisible,
         setEditIsModalVisible
       }}
