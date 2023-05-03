@@ -7,13 +7,21 @@ export const IndexPage = () => {
     <>
       <StyledMain>
         <div>
-          <figure>
-            <img src={Logo} alt="" />
-          </figure>
-          <p>Slogan</p>
+          <section>
+            <figure>
+              <img src={Logo} alt="" />
+            </figure>
+            <p>
+              Memorize conceitos gratuitamente com flashcards personalizados
+            </p>
+          </section>
+
+          <section>
+            <Link to="/register">Comece Agora</Link>
+            <Link to="/login">Já tenho uma conta</Link>
+          </section>
+          
         </div>
-        <Link to="/register">Comece Agora</Link>
-        <Link to="/login">Já tenho uma conta</Link>
       </StyledMain>
     </>
   );
