@@ -39,36 +39,35 @@ export const StyledMain = styled.main`
         background: var(--grey-0);
         color: black;
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        align-content: center;
-        justify-content: center;
+        -webkit-box-align: center;
+        place-content: center;
+        -webkit-box-pack: center;
         gap: 2rem;
         height: 400px;
-        
+        flex-direction: column;
+      
       
 
         ul {
           display: flex;
           gap: 0.5rem;
           padding: 10px;
+          width: 350px;
+          overflow: auto;
+          flex-flow: column wrap;
           
 
           li {
-            background: #d9d9d9;
-            border: 1px solid #000000;
+            background: rgb(217, 217, 217);
+            border: 1px solid rgb(0, 0, 0);
             border-radius: 7px;
             width: 180px;
             height: 234px;
-            
-
             display: flex;
             flex-direction: column;
             align-items: center;
-            align-content: center;
             gap: 0.5rem;
-
-            padding: 25px 0;
+            padding: 25px 0px;
 
             h4 {
               font-weight: 700;
@@ -95,7 +94,7 @@ export const StyledMain = styled.main`
       }
     }
 
-    @media (min-width: 600px) {
+  @media (min-width: 600px) {
       display: flex;
       
       flex-direction: column;
@@ -146,6 +145,11 @@ export const StyledMain = styled.main`
           ul {
             display: flex;
             gap: 0.5rem;
+            padding: 10px;
+            width: 100%;
+            overflow: auto;
+            flex-flow: row;
+
 
             li {
               background: #d9d9d9;
