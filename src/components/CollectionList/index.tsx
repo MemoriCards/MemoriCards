@@ -52,6 +52,7 @@ export const CollectionList = () => {
           </p>
         </div>
       )}
+      
     </StyledSection>
   );
 };

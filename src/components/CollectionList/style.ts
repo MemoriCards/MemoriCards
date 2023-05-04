@@ -6,15 +6,19 @@ export const StyledSection = styled.section`
   flex-direction: column;
   width: 940px;
   height: 747px;
-  background: #fbfbfb;
+  background: var(--grey-2);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
   background: var(--color-primary-1);
 
+  div > p {
+    color: white;
+  }
+
   @media (max-width: 900px) {
     width: auto;
     max-width: 300px;
-    height: auto;
+    height: 70%;
   }
 `;
 
