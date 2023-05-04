@@ -10,6 +10,7 @@ export const StyledUl = styled.ul`
   gap: 15px;
   flex-direction: row;
   flex-wrap: wrap;
+  border-radius: 0px 0px 8px 8px;
 
   @media (max-width: 900px) {
     height: 450px;
