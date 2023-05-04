@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const Styledli = styled.li`
   display: flex;
   flex-direction: column;
-  /* margin: auto; */
   height: 100%;
   gap: 1rem;
   min-width: 229.99px;
@@ -14,6 +13,8 @@ export const Styledli = styled.li`
   border-radius: 7px;
   box-sizing: border-box;
   border: solid 1px var(--grey-2);
+  top: 80px;
+  left: 0;
 
   div {
     background: #1a59fc;
@@ -21,8 +22,9 @@ export const Styledli = styled.li`
     height: 32.78px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    justify-content: space-around;
+    justify-content: flex-end;
+    padding: 0 10px;
+    gap: 10px;
   }
 
   div > button {

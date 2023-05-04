@@ -1,13 +1,14 @@
 import { ErrorSection } from "../../components/ErrorSection";
 import { Header } from "../../components/Header";
+import { DivMain } from './style';
 
 export const ErrorPage = () => {
   return (
     <>
       <Header />
-      <main>
+      <DivMain>
         <ErrorSection />
-      </main>
+      </DivMain>
     </>
   );
 };

@@ -3,7 +3,7 @@ import { cardContext } from "../../../providers/cardContext";
 import  cancel  from "../../../assets/cancel.png";
 import { Input } from "../../../fragments/Input";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { StyledModal } from "./style";
+import { StyledModalEdit } from './../EditModal/style';
 
 interface icreateCardModal {
   question: string;
@@ -18,7 +18,7 @@ export const CreateCardModal = () => {
     createCard(formData);
 
   return (
-    <StyledModal>
+    <StyledModalEdit>
         <div className="ControlerMain">
       
         <div className="controlerContent">
@@ -34,33 +34,34 @@ export const CreateCardModal = () => {
           </div>
           <form className="form" onSubmit={handleSubmit(submit)}>
             <div className="ControlerForm">
-            <div className="Question">
-              <h2>Pergunta</h2>
-                <Input
-                  type="text"
-                  placeholder="Escreva aqui sua pergunta..."
-                  {...register("question")}
-                  required
-                />
+              <div className="Question">
+                <h2>Pergunta</h2>
+                  <Input
+                    type="text"
+                    placeholder="Escreva aqui sua pergunta..."
+                    {...register("question")}
+                    required
+                  />
+              </div>
+
+                <div className="Question">
+                  <h2>Resposta</h2>
+                  <Input
+                    type="text"
+                    placeholder="Escreva aqui sua resposta..."
+                    {...register("answer")}
+                    required
+                  />
+                </div>
             </div>
-            <div>
-              <h2>Resposta</h2>
-              <Input
-                type="text"
-                placeholder="Escreva aqui sua resposta..."
-                {...register("answer")}
-                required
-              />
-            </div>
-            </div>
-            <button type="submit">
+            <button className="enviar" type="submit">
               {" "}
-              <i className="fa-solid fa-plus"></i>Criar card
+              <i className="fa-solid fa-plus"></i> Criar card
             </button>
           </form>
         </div>
         </div>
-      </StyledModal>
+      </StyledModalEdit>
     
   );
 };
