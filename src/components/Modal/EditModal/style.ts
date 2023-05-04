@@ -1,12 +1,13 @@
 import styled from "styled-components";
 
-export const StyledModal = styled.div`
+export const StyledModalEdit = styled.div`
     
         width: 100%;
         height: 90vh;
         background: #8E8383BD;
         position: absolute;
-        top: 50;
+        top: 80px;
+        left: 0;
         display: flex;
         align-items: center;
         justify-content: center;

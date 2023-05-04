@@ -61,4 +61,18 @@ export const ResultsStyleDiv = styled.div `
         justify-content: center;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);    
     }
+
+    .btn-again {
+        height: 41px;
+        width: 150px;
+        border-radius: 7px;
+        background-color: var(--color-secundary-3);
+        color: var(--grey-0);
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px;
+    }
 `

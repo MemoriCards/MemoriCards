@@ -25,14 +25,14 @@ export const ResultsContainer = () => {
         </div>
         <div className="divPoints">
           <p>Não respondida</p>
-          <span className="p2">{incorrects}</span>
+          <span className="p2">{unanswered}</span>
         </div>
         <div className="divPoints">
           <p>Erradas</p>
-          <span className="p3">{unanswered}</span>
+          <span className="p3">{incorrects}</span>
         </div>
       </div>
-      <button onClick={tryAgain}>Tentar Novamente</button>
+      <button className="btn-again" onClick={tryAgain}>Tentar Novamente</button>
     </ResultsStyleDiv>
   );
 };

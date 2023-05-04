@@ -26,7 +26,7 @@ export const CardItem = ({ card }: ICardProps) => {
             setEditIsModalVisible(true);
           }}
         >
-          Editar
+          <i className="fa-solid fa-pen"></i>
         </button>
       </div>
       <h3>{card.question}</h3>
