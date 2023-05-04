@@ -1,9 +1,10 @@
 import { LoginForm } from "../../components/Form/LoginForm";
+import { LoginStyleDivMain } from "./style";
 
 export const LoginPage = () => {
   return (
-    <div>
+    <LoginStyleDivMain>
       <LoginForm />
-    </div>
+    </LoginStyleDivMain>
   );
 };

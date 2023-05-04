@@ -4,6 +4,7 @@ import { LoginFormSchema, TLoginValues } from './LoginFormSchema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useContext } from 'react';
 import { userContext } from '../../../providers/userContext';
+import { LoginFormStyle } from './style';
 
 
 export const LoginForm = () => {
@@ -16,6 +17,7 @@ export const LoginForm = () => {
 
     return (
         <>
+        <LoginFormStyle>
             <h1>Entrar</h1>
             <form onSubmit={handleSubmit(submit)} noValidate>
                 <Input label='Email' type='email' {...register("email")} />
@@ -24,6 +26,7 @@ export const LoginForm = () => {
                 {errors.password ? <p>{errors.password.message}</p> : null}
                 <button type='submit'>Entrar</button>
             </form>
+        </LoginFormStyle>
         </>
     )
 }

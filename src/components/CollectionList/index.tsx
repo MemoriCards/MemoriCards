@@ -3,6 +3,7 @@ import { CollectionCardList } from "./CollectionCardList";
 import { cardContext } from "../../providers/cardContext";
 import toast from "react-hot-toast";
 import { EditCardModal } from "../Modal/EditModal";
+import { StyledDiv, StyledSection } from "./style";
 
 export const CollectionList = () => {
   const {
@@ -15,9 +16,9 @@ export const CollectionList = () => {
   } = useContext(cardContext);
 
   return (
-    <section>
+    <StyledSection>
       {isEditModalVisible ? <EditCardModal /> : null}
-      <div>
+      <StyledDiv>
         <button
           type="button"
           onClick={() => {
@@ -40,9 +41,9 @@ export const CollectionList = () => {
         >
           <i className="fa-sharp fa-regular fa-circle-play"></i>Iniciar teste
         </button>
-      </div>
+      </StyledDiv>
 
       <CollectionCardList />
-    </section>
+    </StyledSection>
   );
 };

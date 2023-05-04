@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { cardContext, iCard } from "../../../../providers/cardContext";
 import { EditCardModal } from "../../../Modal/EditModal";
+import { Styledli } from "./style";
 
 export interface ICardProps {
   card: iCard;
@@ -10,7 +11,7 @@ export const CardItem = ({ card }: ICardProps) => {
   const { deleteCard, setEditIsModalVisible, setSelectedCard } =
     useContext(cardContext);
   return (
-    <li>
+    <Styledli>
       <div>
         <button
           onClick={() => {
@@ -29,6 +30,6 @@ export const CardItem = ({ card }: ICardProps) => {
         </button>
       </div>
       <h3>{card.question}</h3>
-    </li>
+    </Styledli>
   );
 };

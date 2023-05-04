@@ -1,6 +1,7 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { toast } from "react-hot-toast";
 import { cardContext } from "../../providers/cardContext";
+import { StyledForm } from "./style";
 
 export const CollectionName = () => {
   const { inputValue, setInputValue, collectionTitle, setCollectionTitle } =
@@ -16,7 +17,7 @@ export const CollectionName = () => {
           </button>
         </div>
       ) : (
-        <form
+        <StyledForm
           onSubmit={(e) => {
             e.preventDefault();
             if (collectionTitle != "") {
@@ -34,7 +35,7 @@ export const CollectionName = () => {
             placeholder="De um nome para sua coleção de cartões..."
           />
           <button type="submit">OK</button>
-        </form>
+        </StyledForm>
       )}
     </>
   );
