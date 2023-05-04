@@ -17,7 +17,7 @@ export const Styledli = styled.li`
   left: 0;
 
   div {
-    background: #1a59fc;
+    background: var(--color-primary-1);
     border-radius: 7px 7px 0px 0px;
     height: 32.78px;
     display: flex;
