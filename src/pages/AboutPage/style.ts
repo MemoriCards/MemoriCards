@@ -45,10 +45,14 @@ export const StyledMain = styled.main`
         justify-content: center;
         gap: 2rem;
         height: 400px;
+        
+      
 
         ul {
           display: flex;
           gap: 0.5rem;
+          padding: 10px;
+          
 
           li {
             background: #d9d9d9;
@@ -56,6 +60,7 @@ export const StyledMain = styled.main`
             border-radius: 7px;
             width: 180px;
             height: 234px;
+            
 
             display: flex;
             flex-direction: column;

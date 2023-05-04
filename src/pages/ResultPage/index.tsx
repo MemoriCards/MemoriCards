@@ -8,7 +8,7 @@ export const ResultPage = () => {
   return (
     <>
       <ResultStyleDiv>
-        <div>
+        <div className="div">
           <div className="btn_controller">
             <button
               onClick={() => {

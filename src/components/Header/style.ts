@@ -6,11 +6,11 @@ export const StyledHeader = styled.header`
     color: var(--grey-0);
     height: 83px;
     
-    
     div {
       display: flex;
       width: 100%;
       flex-wrap: wrap;
+      height: 80px;
     }
 
     figure {
@@ -31,10 +31,16 @@ export const StyledHeader = styled.header`
       z-index: 1;
     }
 
-
-
     nav > a:hover {
       background-color: var(--color-secundary);
+    }
+
+    .controlerNavLogin {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      width: 100%;
+      border-radius: 0 0 6px 6px;
     }
 
     .burger-menu {
@@ -68,8 +74,7 @@ export const StyledHeader = styled.header`
       transition:height 0.3s ease-in-out;
       transition-delay: 0.1s;
   }
-  
-  /* ------------- sliding menu ------------------ */
+
   .hidden {
       display: none;
   }
@@ -81,24 +86,34 @@ export const StyledHeader = styled.header`
   .burger-bar.clicked:nth-child(1){
     transform: rotate(45deg) translate(0.5em, 0.5em);
     transition: ease-out 0.5s;
-}
+  }
 
-.burger-bar.clicked:nth-child(2){
-    transform: scale(0.01);
-    transition: ease-out 0.5s;
-}
+  .burger-bar.clicked:nth-child(2){
+      transform: scale(0.01);
+      transition: ease-out 0.5s;
+  }
 
-.burger-bar.clicked:nth-child(3){
-    transform: rotate(135deg) translate(-0.5em, 0.5em);
-    transition: ease-out 0.5s;
-}
+  .burger-bar.clicked:nth-child(3){
+      transform: rotate(135deg) translate(-0.5em, 0.5em);
+      transition: ease-out 0.5s;
+  }
 
-/* unclicked */
-.burger-bar.unclicked {
-    transform: rotate(0) translate(0);
-    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s;
-}
+  /* unclicked */
+  .burger-bar.unclicked {
+      transform: rotate(0) translate(0);
+      transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s;
+  }
 
+  .controler-logout {
+    display: flex;
+    width: 40px;
+    align-items: center;
+    margin-right: 20px;
+    height: 80px;
+  }
+  .Logout {
+    cursor: pointer;
+  }
 @media (min-width: 600px) {
 
   background-color: var(--color-primary-1);
@@ -153,12 +168,13 @@ export const StyledHeader = styled.header`
   justify-content: space-evenly;
   width: 50%;
 }
-
+.controler-logout {
+  display: flex;
+    width: 40px;
+    align-items: center;
+}
 .Logout {
   cursor: pointer;
-}
-  
-}
-  
+} 
 
 `;
