@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Background from "../../assets/Background.png";
 
 export const StyledForm = styled.form`
 
