@@ -1,6 +1,5 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { cardContext, iCard } from "../../../../providers/cardContext";
-import { EditCardModal } from "../../../Modal/EditModal";
 import { Styledli } from "./style";
 
 export interface ICardProps {
@@ -8,10 +7,13 @@ export interface ICardProps {
 }
 
 export const CardItem = ({ card }: ICardProps) => {
+  const [flip, setFlip] = useState(true);
   const { deleteCard, setEditIsModalVisible, setSelectedCard } =
     useContext(cardContext);
+
+
   return (
-    <Styledli>
+    <Styledli onClick={() => {setFlip(!flip)}}>
       <div>
         <button
           onClick={() => {
@@ -29,7 +31,7 @@ export const CardItem = ({ card }: ICardProps) => {
           <i className="fa-solid fa-pen"></i>
         </button>
       </div>
-      <h3>{card.question}</h3>
+      {flip ? <h3>{card.question}</h3> : <h3>{card.answer}</h3>}
     </Styledli>
   );
 };

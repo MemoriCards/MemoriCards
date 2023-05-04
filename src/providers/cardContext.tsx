@@ -42,6 +42,7 @@ interface iCardContext {
   setEditIsModalVisible: React.Dispatch<React.SetStateAction<boolean>>;
   selectedCard: iCard | null;
   setSelectedCard: React.Dispatch<React.SetStateAction<iCard | null>>;
+  
 }
 
 interface iGetResponse {

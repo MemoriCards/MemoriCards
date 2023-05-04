@@ -42,8 +42,15 @@ export const CollectionList = () => {
           <i className="fa-sharp fa-regular fa-circle-play"></i>Iniciar teste
         </button>
       </StyledDiv>
+      {cards.length > 0 ? (
+        <CollectionCardList />
 
-      <CollectionCardList />
+      ) : (
+        <div>
+        <p>Não há cards Ainda <b>Crie algum card!!</b></p>
+        </div>
+      )}
+      
     </StyledSection>
   );
 };
