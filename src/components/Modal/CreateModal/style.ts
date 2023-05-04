@@ -1,14 +1,27 @@
 import styled from "styled-components";
 
 export const StyledModal = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 500px;
-    height: 400px;
-    background-color: var(--grey-0);
-    border-radius: 8px;  
-    align-items: flex-start;   
+    
+        width: 100%;
+        height: 90vh;
+        background: #8E8383BD;
+        position: absolute;
+        top: 50;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+
+    .ControlerMain {
+            display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 600px;
+        height: 600px;
+        background-color: var(--grey-0);
+        border-radius: 8px;  
+        align-items: flex-start;
+    }
 
     input {
         width: 150px;
@@ -18,6 +31,8 @@ export const StyledModal = styled.div`
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
         word-break: break-word;
     }
+
+    
     .header {
         display: flex;
         justify-content: space-around;
@@ -48,9 +63,10 @@ export const StyledModal = styled.div`
         border: 1px solid red;
         flex-direction: column;
         gap: 50px; 
-        
-        
+             
     }
+
+    
 
     .ControlerForm {
         display: flex;
@@ -66,5 +82,9 @@ export const StyledModal = styled.div`
         align-items: center;
         justify-content: center;
         
+    }
+
+    .form {
+        display: flex; 
     }
 `

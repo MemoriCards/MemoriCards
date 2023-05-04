@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { cardContext } from "../../../providers/cardContext";
-
+import  cancel  from "../../../assets/cancel.png";
 import { Input } from "../../../fragments/Input";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { StyledModal } from "./style";
@@ -19,44 +19,48 @@ export const CreateCardModal = () => {
 
   return (
     <StyledModal>
-      <div className="controlerContent">
-        <div className="header">
-          <span>Criar Card</span>
-          <button
-            onClick={() => {
-              setIsModalVisible(false);
-            }}
-          >
-            X
-          </button>
-        </div>
-        <form onSubmit={handleSubmit(submit)}>
-          <div className="ControlerForm">
-          <div className="Question">
-            <h2>Pergunta</h2>
+        <div className="ControlerMain">
+      
+        <div className="controlerContent">
+          <div className="header">
+            <span>Criar Card</span>
+            <button
+              onClick={() => {
+                setIsModalVisible(false);
+              }}
+            >
+              <img src={cancel} />
+            </button>
+          </div>
+          <form className="form" onSubmit={handleSubmit(submit)}>
+            <div className="ControlerForm">
+            <div className="Question">
+              <h2>Pergunta</h2>
+                <Input
+                  type="text"
+                  placeholder="Escreva aqui sua pergunta..."
+                  {...register("question")}
+                  required
+                />
+            </div>
+            <div>
+              <h2>Resposta</h2>
               <Input
                 type="text"
-                placeholder="Escreva aqui sua pergunta..."
-                {...register("question")}
+                placeholder="Escreva aqui sua resposta..."
+                {...register("answer")}
                 required
               />
-          </div>
-          <div>
-            <h2>Resposta</h2>
-            <Input
-              type="text"
-              placeholder="Escreva aqui sua resposta..."
-              {...register("answer")}
-              required
-            />
-          </div>
-          </div>
-          <button type="submit">
-            {" "}
-            <i className="fa-solid fa-plus"></i>Criar card
-          </button>
-        </form>
-      </div>
-    </StyledModal>
+            </div>
+            </div>
+            <button type="submit">
+              {" "}
+              <i className="fa-solid fa-plus"></i>Criar card
+            </button>
+          </form>
+        </div>
+        </div>
+      </StyledModal>
+    
   );
 };

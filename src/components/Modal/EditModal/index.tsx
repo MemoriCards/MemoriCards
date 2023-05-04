@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import { cardContext, iCreateCard } from "../../../providers/cardContext";
-import { StyledModal } from ".././styleTestModal";
+import { cardContext} from "../../../providers/cardContext";
+import { StyledModal } from "../CreateModal/style";
 import { Input } from "../../../fragments/Input";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { ICardProps } from "../../CollectionList/CollectionCardList/CardItem";
+
 
 interface ieditCardModal {
   question: string;
