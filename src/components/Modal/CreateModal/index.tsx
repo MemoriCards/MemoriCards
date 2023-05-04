@@ -29,7 +29,7 @@ export const CreateCardModal = () => {
                 setIsModalVisible(false);
               }}
             >
-              <img src={cancel} />
+              <img className="cancel" src={cancel} />
             </button>
           </div>
           <form className="form" onSubmit={handleSubmit(submit)}>

@@ -11,7 +11,9 @@ export const StyledModal = styled.div`
         align-items: center;
         justify-content: center;
     
-
+    .cancel {
+        width: 50%;
+    }
     .ControlerMain {
             display: flex;
         align-items: center;
@@ -85,6 +87,8 @@ export const StyledModal = styled.div`
     }
 
     .form {
-        display: flex; 
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
     }
 `
