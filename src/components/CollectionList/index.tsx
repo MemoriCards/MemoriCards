@@ -25,8 +25,8 @@ export const CollectionList = () => {
             setIsModalVisible(true);
           }}
         >
-          <i className="fa-solid fa-plus"></i>
-          Criar Card
+          <i className="fa-solid fa-plus">
+          </i> Criar Card
         </button>
         <button
           type="button"
@@ -39,7 +39,8 @@ export const CollectionList = () => {
             }
           }}
         >
-          <i className="fa-sharp fa-regular fa-circle-play"></i>Iniciar teste
+          <i className="fa-sharp fa-regular fa-circle-play">
+            </i> Iniciar teste
         </button>
       </StyledDiv>
       {cards.length > 0 ? (

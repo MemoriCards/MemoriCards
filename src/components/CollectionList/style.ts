@@ -1,14 +1,21 @@
 import styled from "styled-components";
 
 export const StyledSection = styled.section`
-  margin-top: 1rem;
+  margin: 16px 0 0 0;
   display: flex;
   flex-direction: column;
-  width: 926px;
+  width: 940px;
   height: 747px;
   background: #fbfbfb;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
+  background: var(--color-primary-1);
+
+  @media (max-width: 900px) {
+    width: auto;
+    max-width: 300px;
+    height: auto;
+  }
 `;
 
 export const StyledDiv = styled.div`
@@ -17,19 +24,23 @@ export const StyledDiv = styled.div`
   border-bottom: solid 1px;
   justify-content: space-between;
 
-  button:nth-child(1) {
+  button {
     width: 230px;
     height: 41px;
-    background: #1a59fc;
+    background: var(--grey-1);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 7px;
     font-weight: 700;
     font-size: 20px;
-    color: white;
     border: solid 1px var(--grey-2);
+    text-transform: uppercase;
   }
 
-  button:nth-child(2) {
+  button:hover {
+    background: white;
+  }
+
+  /* button:nth-child(2) {
     width: 230px;
     height: 41px;
     background: white;
@@ -38,5 +49,23 @@ export const StyledDiv = styled.div`
     font-weight: 700;
     font-size: 20px;
     border: solid 1px var(--grey-2);
+    text-transform: uppercase;
+  } */
+
+  @media (max-width: 900px) {
+    width: auto;
+    justify-content: center;
+
+    button {
+      width: auto;
+      font-size: 12px;
+      padding: 0 10px;
+      margin-right: 8px;
+      white-space:nowrap;
+    }
+
+
   }
+
+
 `;

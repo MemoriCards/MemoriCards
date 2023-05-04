@@ -21,8 +21,24 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing:border-box;
-    font-family: "Inter", sans-serif;
+    font-family: 'Nunito', sans-serif;
     text-decoration:none;  
+}
+
+/* scrollbar*/
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--grey-2);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: grey;
+  border-radius: 20px;
 }
 
 body {
