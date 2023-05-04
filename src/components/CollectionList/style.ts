@@ -1,8 +1,4 @@
 import styled from "styled-components";
-<<<<<<< HEAD
-=======
-import Background from "../../assets/Background.png";
->>>>>>> b5b5be8 (styled: component collectionList)
 
 export const StyledSection = styled.section`
   margin-top: 1rem;
