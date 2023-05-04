@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import { cardContext} from "../../../providers/cardContext";
-import { StyledModal } from "../CreateModal/style";
+import { cardContext } from "../../../providers/cardContext";
 import { Input } from "../../../fragments/Input";
 import { SubmitHandler, useForm } from "react-hook-form";
-
+import cancel from "../../../assets/cancel.png";
+import { StyledModalEdit } from "./style";
 
 interface ieditCardModal {
   question: string;
@@ -22,40 +22,50 @@ export const EditCardModal = () => {
   };
 
   return (
-    <StyledModal>
-      <div>
-        <header>
-          <h1>Editar Card</h1>
-          <button
-            onClick={() => {
-              setEditIsModalVisible(false);
-            }}
-          >
-            X
-          </button>
-        </header>
-        <form onSubmit={handleSubmit(submit)}>
-          <div>
-            <h2>Pergunta</h2>
-            <Input
-              type="text"
-              defaultValue={selectedCard?.question}
-              placeholder="Escreva aqui sua pergunta..."
-              {...register("question")}
-            />
+    <StyledModalEdit>
+      <div className="ControlerMain">
+        <div className="controlerContent">
+          <div className="header">
+            <span>Editar Card</span>
+            <button
+              onClick={() => {
+                setEditIsModalVisible(false);
+              }}
+            >
+              <img className="cancel" src={cancel} />
+            </button>
           </div>
-          <div>
-            <h2>Resposta</h2>
-            <Input
-              type="text"
-              defaultValue={selectedCard?.answer}
-              placeholder="Escreva aqui sua resposta..."
-              {...register("answer")}
-            />
-          </div>
-          <button type="submit">Editar</button>
-        </form>
+          <form className="form" onSubmit={handleSubmit(submit)}>
+            <div className="ControlerForm">
+              <div className="Question">
+                <h2>Pergunta</h2>
+                <Input
+                  type="text"
+                  defaultValue={selectedCard?.question}
+                  placeholder="Escreva aqui sua pergunta..."
+                  {...register("question")}
+                  required
+                />
+              </div>
+
+              <div className="Question">
+                <h2>Resposta</h2>
+                <Input
+                  type="text"
+                  defaultValue={selectedCard?.answer}
+                  placeholder="Escreva aqui sua resposta..."
+                  {...register("answer")}
+                  required
+                />
+              </div>
+            </div>
+
+            <button className="enviar" type="submit">
+              Editar
+            </button>
+          </form>
+        </div>
       </div>
-    </StyledModal>
+    </StyledModalEdit>
   );
 };

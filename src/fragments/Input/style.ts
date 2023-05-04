@@ -10,11 +10,8 @@ export const InputDiv = styled.div`
   }
 
   input {
-    border-style: solid;
-    border-bottom-width: 2px;
-    border-top-width: 0;
-    border-right-width: 0;
-    border-left-width: 0;
+    border: none;
+    border-bottom: 2px solid red;
     border-color: var(--grey-2);
     background-color: var(--grey-0);
     padding: 1px;

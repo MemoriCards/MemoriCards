@@ -1,8 +1,6 @@
 import styled from "styled-components";
-import Background from "../../assets/Background.png";
 
 export const StyledMain = styled.main`
-  background-image: url(${Background});
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -80,8 +78,6 @@ export const StyledMain = styled.main`
   flex-direction: column;
   align-items: center;
   height: 90vh;
-
-  background-image: url(${Background});
 
   div {
     margin: auto;
