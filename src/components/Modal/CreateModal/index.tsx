@@ -1,8 +1,9 @@
 import { useContext } from "react";
 import { cardContext } from "../../../providers/cardContext";
-import { StyledModal } from "../styleTestModal";
+
 import { Input } from "../../../fragments/Input";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { StyledModal } from "./style";
 
 interface icreateCardModal {
   question: string;
@@ -18,9 +19,9 @@ export const CreateCardModal = () => {
 
   return (
     <StyledModal>
-      <div>
-        <header>
-          <h1>Criar Card</h1>
+      <div className="controlerContent">
+        <div className="header">
+          <span>Criar Card</span>
           <button
             onClick={() => {
               setIsModalVisible(false);
@@ -28,16 +29,17 @@ export const CreateCardModal = () => {
           >
             X
           </button>
-        </header>
+        </div>
         <form onSubmit={handleSubmit(submit)}>
-          <div>
+          <div className="ControlerForm">
+          <div className="Question">
             <h2>Pergunta</h2>
-            <Input
-              type="text"
-              placeholder="Escreva aqui sua pergunta..."
-              {...register("question")}
-              required
-            />
+              <Input
+                type="text"
+                placeholder="Escreva aqui sua pergunta..."
+                {...register("question")}
+                required
+              />
           </div>
           <div>
             <h2>Resposta</h2>
@@ -47,6 +49,7 @@ export const CreateCardModal = () => {
               {...register("answer")}
               required
             />
+          </div>
           </div>
           <button type="submit">
             {" "}
