@@ -3,13 +3,19 @@ import { cardContext } from "../../providers/cardContext";
 import { ResultsStyleDiv } from "./style";
 
 export const ResultsContainer = () => {
-  const { corrects, incorrects, unanswered, firstCardId, navigate, setInicialValues } =
-    useContext(cardContext);
+  const {
+    corrects,
+    incorrects,
+    unanswered,
+    firstCardId,
+    navigate,
+    setInicialValues,
+  } = useContext(cardContext);
 
-    const tryAgain = () => {
-      setInicialValues()
-      navigate(`/test/${firstCardId}`);
-    }
+  const tryAgain = () => {
+    setInicialValues();
+    navigate(`/test/${firstCardId}`);
+  };
   return (
     <ResultsStyleDiv>
       <div className="divControler">
@@ -25,10 +31,8 @@ export const ResultsContainer = () => {
           <p>Erradas</p>
           <span className="p3">{unanswered}</span>
         </div>
-      
-      
       </div>
-      <Link to={`/test/${firstCardId}`}>Tentar Novamente</Link>
+      <button onClick={tryAgain}>Tentar Novamente</button>
     </ResultsStyleDiv>
   );
 };
