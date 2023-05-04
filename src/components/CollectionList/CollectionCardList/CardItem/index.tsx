@@ -8,7 +8,7 @@ import { Styledli } from "./style";
 import { EditCardModal } from "../../../Modal/EditModal";
 >>>>>>> cda61c7 (fix: resolve conflicts)
 
-export interface ICardProps {
+interface ICardProps {
   card: iCard;
 }
 
