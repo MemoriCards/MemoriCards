@@ -11,9 +11,12 @@ export const CardItem = ({ card }: ICardProps) => {
   const { deleteCard, setEditIsModalVisible, setSelectedCard } =
     useContext(cardContext);
 
-
   return (
-    <Styledli onClick={() => {setFlip(!flip)}}>
+    <Styledli
+      onClick={() => {
+        setFlip(!flip);
+      }}
+    >
       <div>
         <button
           onClick={() => {

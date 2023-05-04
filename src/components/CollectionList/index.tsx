@@ -44,13 +44,13 @@ export const CollectionList = () => {
       </StyledDiv>
       {cards.length > 0 ? (
         <CollectionCardList />
-
       ) : (
         <div>
-        <p>Não há cards Ainda <b>Crie algum card!!</b></p>
+          <p>
+            Não há cards Ainda <b>Crie algum card!!</b>
+          </p>
         </div>
       )}
-      
     </StyledSection>
   );
 };

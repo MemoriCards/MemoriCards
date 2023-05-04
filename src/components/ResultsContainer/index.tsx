@@ -32,7 +32,9 @@ export const ResultsContainer = () => {
           <span className="p3">{incorrects}</span>
         </div>
       </div>
-      <button className="btn-again" onClick={tryAgain}>Tentar Novamente</button>
+      <button className="btn-again" onClick={() => tryAgain()}>
+        Tentar Novamente
+      </button>
     </ResultsStyleDiv>
   );
 };
