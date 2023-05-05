@@ -25,8 +25,7 @@ export const CollectionList = () => {
             setIsModalVisible(true);
           }}
         >
-          <i className="fa-solid fa-plus">
-          </i> Criar Card
+          <i className="fa-solid fa-plus"></i> Criar Card
         </button>
         <button
           type="button"
@@ -39,20 +38,19 @@ export const CollectionList = () => {
             }
           }}
         >
-          <i className="fa-sharp fa-regular fa-circle-play">
-            </i> Iniciar teste
+          <i className="fa-sharp fa-regular fa-circle-play"></i> Iniciar teste
         </button>
       </StyledDiv>
       {cards.length > 0 ? (
         <CollectionCardList />
       ) : (
-        <div>
+        <div className="msg-emptyCards">
+          <p>Você ainda não possui nenhum card. 😔 </p>
           <p>
-            Não há cards Ainda <b>Crie algum card!!</b>
+            Crie um agora clicando no botão <b>+ CRIAR CARD</b> logo acima.
           </p>
         </div>
       )}
-      
     </StyledSection>
   );
 };

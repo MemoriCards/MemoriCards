@@ -11,6 +11,14 @@ export const StyledSection = styled.section`
   border-radius: 8px;
   background: var(--color-primary-1);
 
+  .msg-emptyCards {
+    margin: auto;
+    padding: 0 50px;
+    padding-bottom: 60px;
+    font-size: 1.5rem;
+
+  }
+
   div > p {
     color: white;
   }
@@ -18,7 +26,7 @@ export const StyledSection = styled.section`
   @media (max-width: 900px) {
     width: auto;
     max-width: 300px;
-    height: 70%;
+    height: auto;
   }
 `;
 
@@ -44,18 +52,6 @@ export const StyledDiv = styled.div`
     background: white;
   }
 
-  /* button:nth-child(2) {
-    width: 230px;
-    height: 41px;
-    background: white;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 7px;
-    font-weight: 700;
-    font-size: 20px;
-    border: solid 1px var(--grey-2);
-    text-transform: uppercase;
-  } */
-
   @media (max-width: 900px) {
     width: auto;
     justify-content: center;
@@ -65,11 +61,7 @@ export const StyledDiv = styled.div`
       font-size: 12px;
       padding: 0 10px;
       margin-right: 8px;
-      white-space:nowrap;
+      white-space: nowrap;
     }
-
-
   }
-
-
 `;
