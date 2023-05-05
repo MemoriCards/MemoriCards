@@ -46,7 +46,7 @@ export const TestPage = () => {
         <div className="controlerMain">
           <div className="divisionContent">
             <section>
-              <div className="areaQuestion">{cardInTest?.question}</div>
+              <div className="card-question">{cardInTest?.question}</div>
             </section>
             <section>
               <form
@@ -68,12 +68,12 @@ export const TestPage = () => {
                 }}
               >
                 <div className="ControlerResposta">
-                  <Input placeholder="Entre com a resposta" name="answer" />
+                  <Input className="input-answer" placeholder="Entre com a resposta" name="answer" />
                   <button type="submit">Enviar</button>
                 </div>
                 <p>Ou</p>
                 <button
-                  className="revela-tudo"
+                  className="btn-response"
                   type="button"
                   onClick={(event) => {
                     const target = event.target as HTMLButtonElement;
@@ -97,7 +97,7 @@ export const TestPage = () => {
             </section>
           </div>
 
-          <p>
+          <p className="count" >
             {currentIndex + 1}/{cards.length}
           </p>
         </div>
