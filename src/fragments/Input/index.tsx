@@ -1,5 +1,4 @@
 import { InputHTMLAttributes, forwardRef, ForwardedRef } from "react";
-import { InputDiv } from "./style";
 
 interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
     label?: string;
@@ -7,9 +6,9 @@ interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
 
 export const Input = forwardRef(({label, ...rest}: IInputProps, ref: ForwardedRef<HTMLInputElement>) => {
     return(
-        <InputDiv>
+        <div>
             {label ? <label>{label}</label> : null}
             <input ref={ref} {...rest} />
-        </InputDiv>
+        </div>
     )
 })
