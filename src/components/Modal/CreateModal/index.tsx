@@ -3,7 +3,7 @@ import { cardContext } from "../../../providers/cardContext";
 import cancel from "../../../assets/cancel.png";
 import { Input } from "../../../fragments/Input";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { StyledModalEdit } from "./../EditModal/style";
+import { StyledModal } from './style';
 
 interface icreateCardModal {
   question: string;
@@ -18,7 +18,7 @@ export const CreateCardModal = () => {
     createCard(formData);
 
   return (
-    <StyledModalEdit>
+    <StyledModal>
       <div className="ControlerMain">
         <div className="controlerContent">
           <div className="header">
@@ -59,6 +59,6 @@ export const CreateCardModal = () => {
           </form>
         </div>
       </div>
-    </StyledModalEdit>
+    </StyledModal>
   );
 };
