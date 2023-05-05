@@ -6,34 +6,39 @@ export const StyledDiv = styled.div`
   align-self: flex-start;
   margin: 30px auto 0 auto;
   display: flex;
-  gap: 1rem;
+  gap: 5px;
 
   span {
     background: var(--grey-0);
-    width: 803px;
+    width: 822px;
+    height: 41px;
     border: 1px solid var(--grey-2);
     text-transform: uppercase;
     border-radius: 7px;
     font-weight: 700;
-    font-size: 20px;
+    font-size: 18px;
     padding: 0 20px;
     display: flex;
     align-items: center;
-
+  
   }
 
   button {
-    height: 41px;
     width: 112px;
+    height: 41px;
     background: var(--grey-0);
     border-radius: 7px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border: 1px solid var(--grey-2);
   }
 
+  button:hover {
+    background: white;
+  }
+
   @media (max-width: 900px) {
     span {
-      width: auto;
+      width: 255px;
     }
 
     button {
@@ -44,9 +49,9 @@ export const StyledDiv = styled.div`
 
 export const StyledForm = styled.form`
   display: flex;
-  gap: 5px;
   align-items: center;
   margin-top: 30px;
+  gap: 5px;
 
   input {
     width: 822px;
@@ -83,13 +88,15 @@ export const StyledForm = styled.form`
 
   @media (max-width: 900px) {
     width: auto;
+    gap: 5px;
 
     input {
-      width: auto;
+      width: 255px;
     }
 
     button {
-      width: auto;
+      width: 41px;
+      padding: 0 10px;
       font-size: 1rem;
       padding: 0 5px;
     }
