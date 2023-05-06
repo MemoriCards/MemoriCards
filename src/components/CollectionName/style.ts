@@ -44,10 +44,10 @@ export const StyledDiv = styled.div`
   }
 
   @media (min-width: 600px) and (max-width: 977px) {
-    width: 100%;
+    width: 90%;
     span {
       min-width: 450px;
-      width: 100%;
+      width: 90%;
     }
   }
 `;
@@ -91,12 +91,12 @@ export const StyledForm = styled.form`
   }
 
   @media (min-width: 600px) and (max-width: 977px) {
-    width: 100%;
+    width: 90%;
  
     input {
       /* margin-left: 15px; */
       min-width: 450px;
-      width: 100%;
+      width: 90%;
     }
 
     button {
