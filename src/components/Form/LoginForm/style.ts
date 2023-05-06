@@ -2,16 +2,18 @@ import styled from "styled-components";
 
 export const LoginFormStyle = styled.div `
 
-        display: flex;
-        margin: 0px auto;
-        flex-direction: column;
-        align-items: center;
-        width: 90%;
-        height: 400px;
-        background-color: var(--grey-0);
-        border-radius: 8px;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        justify-content: space-evenly;
+    display: flex;
+    margin: 0px auto;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 90%;
+    height: 500px;
+    background-color: var(--grey-0);
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px;
+    justify-content: center;
+    gap: 40px;
 
         form {
             gap: 30px;
