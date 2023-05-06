@@ -18,6 +18,9 @@ export const LoginFormStyle = styled.div `
             display: flex;
             flex-direction: column;
             }
+            p {
+                text-align: center;
+            }
 
             button {
                 height: 42px;
@@ -28,7 +31,7 @@ export const LoginFormStyle = styled.div `
                 background-color: var(--color-secundary-3);
                 color: var(--grey-0);
                 font-size: 16px;
-                margin-top: 50px;
+                margin: 0 auto;
             }
         }
 
