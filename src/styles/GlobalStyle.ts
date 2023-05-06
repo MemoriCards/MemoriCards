@@ -43,8 +43,8 @@ export const GlobalStyle = createGlobalStyle`
 
 body {
     background-image: url(${Background});
-    background-repeat: no-repeat;
-    background-size: cover;
+    /* background-repeat: no-repeat;
+    background-size: cover; */
 }
 
 ul, ol, li{
