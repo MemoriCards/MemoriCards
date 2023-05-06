@@ -47,7 +47,7 @@ export const CollectionList = () => {
         <div className="msg-emptyCards">
           <p>Você ainda não possui nenhum card. 😔 </p>
           <p>
-            Crie um agora clicando no botão <b>+ CRIAR CARD</b> logo acima.
+            Crie seu primeiro card clicando no botão <b>+ CRIAR CARD</b> logo acima.
           </p>
         </div>
       )}
