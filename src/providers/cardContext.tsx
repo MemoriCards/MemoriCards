@@ -42,7 +42,6 @@ interface iCardContext {
   setEditIsModalVisible: React.Dispatch<React.SetStateAction<boolean>>;
   selectedCard: iCard | null;
   setSelectedCard: React.Dispatch<React.SetStateAction<iCard | null>>;
-  
 }
 
 interface iGetResponse {
@@ -97,11 +96,21 @@ export const CardProvider = ({ children }: iProviderProps) => {
           `/users/${user?.id}?_embed=flashcards`
         );
         setCards(allCards.flashcards);
+        return allCards;
       } catch (error) {
         console.log(error);
       }
     };
-    loadCards();
+
+    const promise = new Promise((resolve) => {
+      resolve(loadCards());
+    });
+
+    toast.promise(promise, {
+      loading: "Carregando cards",
+      success: "Cards carregados com sucesso",
+      error: "Falha ao carregar cards",
+    });
   }, []);
 
   useEffect(() => {
@@ -122,48 +131,65 @@ export const CardProvider = ({ children }: iProviderProps) => {
 
   const editCard = async (formData: iEditCard, id: number) => {
     try {
-      const update = await api.patch(`/flashcards/${id}`, formData);
-      const cardIndex = cards?.findIndex((card) => card.id == id);
-      if (cardIndex !== undefined && cards != null) {
-        const updatedCards = cards.slice();
-        updatedCards.splice(cardIndex, 1, update.data);
-        setCards(updatedCards);
-        setEditIsModalVisible(false);
-        toast.success("Card editado com sucesso!");
-      }
+      const promise = new Promise<void>((resolve, reject) => {
+        api
+          .patch(`/flashcards/${id}`, formData)
+          .then((response) => {
+            const updatedCard = response.data;
+            const cardIndex = cards?.findIndex((card) => card.id === id);
+            if (cardIndex !== undefined && cards != null) {
+              const updatedCards = cards.slice();
+              updatedCards.splice(cardIndex, 1, updatedCard);
+              setCards(updatedCards);
+              setEditIsModalVisible(false);
+              resolve();
+            }
+          })
+          .catch((error) => reject(error));
+      });
+
+      toast.promise(promise, {
+        loading: "Salvando...",
+        success: "Card editado com sucesso!",
+        error: "Algo deu errado. Tente novamente!",
+      });
     } catch (error) {
-      toast.error("Algo deu errado. Tente novamente!");
       console.log(error);
     }
   };
 
   const createCard = async (formData: iCreateCard) => {
     try {
-      const update = await api.post("flashcards", {
-        ...formData,
-        userId: user?.id,
+      const promise = api.post("flashcards", { ...formData, userId: user?.id });
+      toast.promise(promise, {
+        loading: "Criando card...",
+        success: "Card cadastrado com sucesso!",
+        error: "Algo deu errado. Tente novamente!",
       });
+      const update = await promise;
       const updatedCards = cards?.slice();
       if (updatedCards != undefined) {
         updatedCards?.push(update.data);
         setCards(updatedCards);
         setIsModalVisible(false);
-        toast.success("Card  cadastrado com sucesso!");
       }
     } catch (error) {
-      toast.error("Algo deu errado. Tente novamente!");
+      console.log(error);
     }
   };
 
   const deleteCard = async (id: number) => {
     try {
-      await api.delete(`/flashcards/${id}`);
-      if (cards != undefined) {
-        setCards(cards.filter((card) => card.id != id));
-        toast.success("Card deletado com sucesso!");
-      }
+      const promise = api.delete(`/flashcards/${id}`);
+      const updatedCards = cards?.filter((card) => card.id != id);
+      setCards(updatedCards);
+      toast.promise(promise, {
+        loading: "Deletando...",
+        success: "Card deletado com sucesso!",
+        error: "Algo deu errado. Tente novamente!",
+      });
     } catch (error) {
-      toast.error("Algo deu errado. Tente novamente!");
+      console.log(error);
     }
   };
 

@@ -57,33 +57,54 @@ export const UserProvider = ({ children }: iProviderProps) => {
 
   const doRegister = async (formData: TRegisterValues) => {
     try {
-      await api.post<iUserResponse>("signup", formData);
-      toast.success("Cadastro realizado com sucesso");
-      navigate("/login");
+      const promise = new Promise<void>((resolve, reject) => {
+        api
+          .post<iUserResponse>("signup", formData)
+          .then(() => {
+            navigate("/login");
+            resolve();
+          })
+          .catch((err) => reject(err));
+      });
+
+      toast.promise(promise, {
+        loading: "Carregando",
+        success: "Cadastro realizado com sucesso",
+        error: (err) => {
+          const currentError = err as AxiosError<string>;
+          if (currentError.response?.data.includes("Email")) {
+            return "Email já cadastrado";
+          } else {
+            return `Aconteceu esse erro: ${err.toString()}`;
+          }
+        },
+      });
     } catch (error) {
-      const currentError = error as AxiosError<string>;
-      if (currentError.response?.data.includes("Email")) {
-        toast.error("Email já cadastrado");
-      } else {
-        console.log(error);
-      }
+      console.log(error);
     }
   };
 
   const doLogin = async (formData: TLoginValues) => {
     try {
-      const { data: userInfo } = await api.post<iUserResponse>(
-        "signin",
-        formData
-      );
-      toast.success("Login efetuado com sucesso");
-      api.defaults.headers.common.authorization = `Bearer ${userInfo.accessToken}`;
-      localStorage.setItem("@TOKEN", userInfo.accessToken);
-      localStorage.setItem("@USERID", JSON.stringify(userInfo.user.id));
-      setUser(userInfo.user);
-      navigate("/dashboard");
+      const promise = api
+        .post<iUserResponse>("signin", formData)
+        .then((response) => {
+          const userInfo = response.data;
+          api.defaults.headers.common.authorization = `Bearer ${userInfo.accessToken}`;
+          localStorage.setItem("@TOKEN", userInfo.accessToken);
+          localStorage.setItem("@USERID", JSON.stringify(userInfo.user.id));
+          setUser(userInfo.user);
+          navigate("/dashboard");
+          return userInfo;
+        });
+
+      toast.promise(promise, {
+        loading: "Carregando",
+        success: "Login efetuado com sucesso",
+        error: "Dados inválidos. Tente novamente",
+      });
     } catch (error) {
-      toast.error("Dados inválidos. Tente novamente");
+      console.log(error);
     }
   };
 
@@ -95,7 +116,9 @@ export const UserProvider = ({ children }: iProviderProps) => {
   };
 
   return (
-    <userContext.Provider value={{ user, navigate, doRegister, doLogin, doLogout }}>
+    <userContext.Provider
+      value={{ user, navigate, doRegister, doLogin, doLogout }}
+    >
       {children}
     </userContext.Provider>
   );
