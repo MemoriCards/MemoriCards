@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { toast } from "react-hot-toast";
 import { cardContext } from "../../providers/cardContext";
-import { StyledForm } from "./style";
+import { NameCollection, StyledForm } from "./style";
 
 export const CollectionName = () => {
   const { inputValue, setInputValue, collectionTitle, setCollectionTitle } =
@@ -10,12 +10,12 @@ export const CollectionName = () => {
   return (
     <>
       {inputValue ? (
-        <div>
+        <NameCollection>
           <span>{collectionTitle}</span>
           <button onClick={() => setInputValue(false)}>
             <i className="fa-solid fa-pen"></i>
           </button>
-        </div>
+        </NameCollection>
       ) : (
         <StyledForm
           onSubmit={(e) => {
