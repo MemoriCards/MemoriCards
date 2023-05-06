@@ -3,13 +3,10 @@ import { z } from "zod";
 export const LoginFormSchema = z.object({
   email: z
     .string()
-    .nonempty("Campo Obrigatório")
+    .nonempty("Digite seu e-mail")
     .min(3, "Preencha o email corretamente")
     .email("Preencha o email corretamente"),
-  password: z
-    .string()
-    .nonempty()
-    .min(7, "A senha precisa ter no mínimo 7 caracteres"),
+  password: z.string().nonempty("Digite sua senha"),
 });
 
 export type TLoginValues = z.infer<typeof LoginFormSchema>;
