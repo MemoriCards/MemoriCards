@@ -5,16 +5,14 @@ export const Styledli = styled.li`
   flex-direction: column;
   height: 100%;
   gap: 1rem;
-  min-width: 229.99px;
-  max-width: 229.99px;
-  max-height: 260px;
+  width: 200px;
+  height: 200px;
   background: #ebebeb;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 7px;
   box-sizing: border-box;
   border: solid 1px var(--grey-2);
-  top: 80px;
-  left: 0;
+
 
   div {
     background: #1a59fc;

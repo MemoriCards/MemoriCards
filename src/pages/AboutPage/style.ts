@@ -30,7 +30,7 @@ export const StyledMain = styled.main`
       p {
         margin-top: 20px;
         font-weight: 300;
-        font-size: 16px;
+        font-size: 15px;
         padding: 0 10px;
         text-align: justify;
       }
@@ -42,17 +42,16 @@ export const StyledMain = styled.main`
         -webkit-box-align: center;
         place-content: center;
         -webkit-box-pack: center;
-        gap: 2rem;
-        height: 400px;
+        padding: 20px 0;
+        height: 330px;
         flex-direction: column;
-      
       
 
         ul {
           display: flex;
           gap: 0.5rem;
+          width: 280px;
           padding: 10px;
-          width: 350px;
           overflow: auto;
           flex-flow: column wrap;
           
@@ -141,6 +140,8 @@ export const StyledMain = styled.main`
           align-content: center;
           justify-content: center;
           gap: 2rem;
+          padding: 20px 20px;
+          height: 360px;
 
           ul {
             display: flex;

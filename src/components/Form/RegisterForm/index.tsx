@@ -22,7 +22,7 @@ export const RegisterForm = () => {
   return (
     <>
       <RegisterDivStyle>
-        <h1>Crie sua conta</h1>
+        <h2>Crie sua conta</h2>
         <form onSubmit={handleSubmit(submit)}>
           <Input label="Email" type="email" {...register("email")} />
           {errors.email ? <p>{errors.email.message}</p> : null}

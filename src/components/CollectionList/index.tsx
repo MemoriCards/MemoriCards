@@ -45,8 +45,8 @@ export const CollectionList = () => {
       {cards.length > 0 ? (
         <CollectionCardList />
       ) : (
-        <div>
-          <p>
+        <div className="DivEmpityCards">
+          <p className="EmpityCards">
             Não há cards Ainda <b>Crie algum card!!</b>
           </p>
         </div>

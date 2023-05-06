@@ -7,7 +7,7 @@ export const ResultsStyleDiv = styled.div `
 display: flex;
         flex-direction: column;
         width: 100%;
-        height: 400px;
+        height: 350px;
         background-color: var(--grey-0);
         align-items: center;
         justify-content: space-evenly;
@@ -17,7 +17,7 @@ display: flex;
         .divControler {
             display: flex;
             flex-direction: row;
-            gap: 10px;
+            gap: 15px;
             
             
         }
@@ -26,13 +26,14 @@ display: flex;
             display: flex;
             flex-direction: column;
             align-items: center;
-            font-size: 14px;
+            font-size: 12px;
             gap: 10px;
             
             span {
                 color: var(--grey-0);
-                width: 100px;
-                height: 100px;
+                width: 70px;
+                font-size: 16px;
+                height: 80px;
                 display: flex;
                 align-items: center;
                 justify-content: center;

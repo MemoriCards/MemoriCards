@@ -26,8 +26,8 @@ export const StyledModal = styled.div`
         }
 
         input {
-            width: 150px;
-            height: 150px;
+            width: 85%;
+            height: 120px;
             background-color: var(--grey-1);
             border-radius: 8px;
             box-shadow: 0px 4px 4px rgba(0, 0, 1, 0.5);
@@ -74,7 +74,7 @@ export const StyledModal = styled.div`
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 20px;
+            gap: 10px;
             
         }
 
@@ -83,7 +83,7 @@ export const StyledModal = styled.div`
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            
+            gap: 10px;
         }
 
         .form {

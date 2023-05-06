@@ -15,6 +15,7 @@ export const RegisterDivStyle = styled.div `
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         justify-content: space-evenly;
 
+
         form {
             gap: 20px;
             display: flex;

@@ -15,11 +15,14 @@ export const StyledHeader = styled.header`
 
     figure {
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
+      -webkit-box-align: center;
       align-items: center;
+      height: 80px;
     }
 
     figure > img {
+      margin-left: 20px;
       width: 50%;   
     }
 
@@ -27,8 +30,10 @@ export const StyledHeader = styled.header`
       display: flex;
       flex-direction: column;
       width: 100%;
+      
       border-radius: 0 0 6px 6px;
       z-index: 1;
+      justify-content: center;
     }
 
     nav > a:hover {
@@ -45,19 +50,20 @@ export const StyledHeader = styled.header`
 
     .burger-menu {
       height: 100%;
-      width: 2em;
+      width: 1.7em;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       -webkit-box-pack: justify;
       justify-content: center;
       cursor: pointer;
-      gap: 8px;
+      gap: 4px;
+      margin-right: 20px;
   }
   
   .burger-bar {
-    width: 2em;
-    height: 0.25em;
+    width: 25px;
+    height: 3px;
     background-color: var(--grey-0);
     border-radius: 0.5em;
   }
@@ -81,10 +87,11 @@ export const StyledHeader = styled.header`
   
   .visible {
       display: inherit;
+      margin-top: 3px;
   }
 
   .burger-bar.clicked:nth-child(1){
-    transform: rotate(45deg) translate(0.5em, 0.5em);
+    transform: rotate(45deg) translate(0.1em, 0.1em);
     transition: ease-out 0.5s;
   }
 
@@ -98,7 +105,6 @@ export const StyledHeader = styled.header`
       transition: ease-out 0.5s;
   }
 
-  /* unclicked */
   .burger-bar.unclicked {
       transform: rotate(0) translate(0);
       transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s;
@@ -106,75 +112,87 @@ export const StyledHeader = styled.header`
 
   .controler-logout {
     display: flex;
-    width: 40px;
+    width: 150px;
+    -webkit-box-align: center;
     align-items: center;
     margin-right: 20px;
     height: 80px;
+    justify-content: flex-end;
   }
   .Logout {
     cursor: pointer;
+    width: 25px;
   }
+
+
+
 @media (min-width: 600px) {
 
-  background-color: var(--color-primary-1);
-  color: var(--grey-0);
-  height: 80px;
+      background-color: var(--color-primary-1);
+      color: var(--grey-0);
+      height: 80px;
 
-  div {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-  }
-  span#burguer {
-    display: none;
-  }
+      div {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+      }
+      span#burguer {
+        display: none;
+      }
 
-  nav {
-    display: flex;
-    -webkit-box-align: center;
-    -webkit-box-pack: justify;
-    justify-content: space-evenly;;
-    width: 100%;
-    height: 80px;
-    flex-direction: row;
-    color: var(--grey-0);
-    border-radius: 0px;
-    align-items: center;
-  }
+      nav {
+        display: flex;
+        -webkit-box-align: center;
+        -webkit-box-pack: justify;
+        justify-content: space-evenly;;
+        width: 100%;
+        height: 80px;
+        flex-direction: row;
+        color: var(--grey-0);
+        border-radius: 0px;
+        align-items: center;
+      }
 
-  figure {
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-    justify-content: center;
-    
-  }
+      figure {
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        width: 100%;
+        justify-content: space-around;
+      }
 
-  .hidden {
-    display: inherit;
-  }
+      figure > img {
+        margin-left: 20px;
+        height: 80px;
+        width: 200px;
+      }
 
-  .burger-menu {
-    display: none;
-  }
+      .hidden {
+        display: inherit;
+      }
 
-.menu {
-  display: flex;
-  flex-direction: row;
-  -webkit-box-align: center;
-  align-items: center;
-  background-color: var(--color-primary-1);
-  border-radius: 0px;
-  justify-content: space-evenly;
-  width: 50%;
-}
-.controler-logout {
-  display: flex;
-    width: 40px;
-    align-items: center;
-}
-.Logout {
-  cursor: pointer;
-} 
+      .burger-menu {
+        display: none;
+      }
+
+    .menu {
+      display: flex;
+      flex-direction: row;
+      -webkit-box-align: center;
+      align-items: center;
+      background-color: var(--color-primary-1);
+      border-radius: 0px;
+      justify-content: space-evenly;
+    }
+    .controler-logout {
+      display: flex;
+        width: 50px;
+        align-items: center;
+    }
+    .Logout {
+      cursor: pointer;
+    } 
 
 `;
