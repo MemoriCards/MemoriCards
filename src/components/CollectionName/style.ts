@@ -1,11 +1,9 @@
 import styled from "styled-components";
 
 export const StyledDiv = styled.div`
-  width: auto;
-  height: 41px;
-  align-self: flex-start;
-  margin: 30px auto 0 auto;
   display: flex;
+  align-items: center;
+  margin-top: 30px;
   gap: 5px;
 
   span {
@@ -20,7 +18,6 @@ export const StyledDiv = styled.div`
     padding: 0 20px;
     display: flex;
     align-items: center;
-  
   }
 
   button {
@@ -36,13 +33,21 @@ export const StyledDiv = styled.div`
     background: white;
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 600px) {
     span {
       width: 255px;
     }
 
     button {
       width: 41px;
+    }
+  }
+
+  @media (min-width: 600px) and (max-width: 977px) {
+    width: 100%;
+    span {
+      min-width: 450px;
+      width: 100%;
     }
   }
 `;
@@ -85,8 +90,23 @@ export const StyledForm = styled.form`
     background: var(--color-primary-2);
   }
 
+  @media (min-width: 600px) and (max-width: 977px) {
+    width: 100%;
+ 
+    input {
+      /* margin-left: 15px; */
+      min-width: 450px;
+      width: 100%;
+    }
 
-  @media (max-width: 900px) {
+    button {
+      /* margin-right: 15px; */
+    }
+  }
+
+
+
+  @media (max-width: 600px) {
     width: auto;
     gap: 5px;
 
@@ -100,11 +120,5 @@ export const StyledForm = styled.form`
       font-size: 1rem;
       padding: 0 5px;
     }
-
-
   }
-
-
-
-
 `;
