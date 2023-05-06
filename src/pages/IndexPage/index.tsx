@@ -6,19 +6,20 @@ export const IndexPage = () => {
   return (
     <>
       <StyledMain>
-        <div>
-          <section>
+        <div className="conteiner-main">
+
+          <section className="conteiner-top" >
             <figure>
               <img src={Logo} alt="" />
             </figure>
             <p>
-              Memorize conceitos gratuitamente com flashcards personalizados
+            Desafie sua memória e aprenda de forma dinâmica e gratuita com flashcards autorais
             </p>
           </section>
 
-          <section>
-            <Link to="/register">Comece Agora</Link>
-            <Link to="/login">Já tenho uma conta</Link>
+          <section  className="conteiner-bottom" >
+            <Link className="btn-register" to="/register">Comece Agora</Link>
+            <Link  className="btn-login" to="/login">Já tenho uma conta</Link>
           </section>
           
         </div>

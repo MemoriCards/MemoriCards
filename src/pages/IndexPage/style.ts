@@ -2,142 +2,91 @@ import styled from "styled-components";
 
 export const StyledMain = styled.main`
   display: flex;
-  flex-direction: column;
   align-items: center;
   height: 90vh;
 
-  div {
+  .conteiner-main {
     margin: auto;
     width: 90%;
-    height: 500px;
+    max-width: 703px;
+    height: auto;
+    max-height: 671px;
     background: var(--grey-0);
     border-radius: 8px;
-    
-  }
-    section {
-      height: 50%;
-      background: var(--color-primary-1);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      align-content: center;
-      padding: 30px;
-      justify-content: space-evenly;
-    
-      p {
-        color: white;
-        font-weight: 400;
-        font-size: 1rem;
-        line-height: 15px;
-        text-align: center;
-      }
-
-      :nth-child(2n) {
-        background: var(--grey-0);
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        align-content: center;
-        justify-content: center;
-        gap: 1rem;
-      }
-
-      figure > img{
-        width: 80%;
-        
-      }
-    }
-
-    a {
-      :nth-child(2n) {
-        color: var(--color-primary-1);
-        background: white;
-        border: solid 1px var(--grey-2);
-      }
-      width: 286px;
-      height: 45px;
-      font-weight: 400;
-      font-size: 22px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-transform: uppercase;
-      font-size: 1rem;
-      background: var(--color-primary-1);
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      border-radius: 7px;
-      border: solid 1px var(--grey-2);
-    }
-  }
-      
-
-@media (min-width: 600px) {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 90vh;
-
-  div {
-    margin: auto;
-    width: 703px;
-    height: 671px;
-    background: var(--grey-0);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 7px;
+  }
 
-    section {
-      height: 50%;
-      background: var(--color-primary-1);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      align-content: center;
-      padding: 50px 50px;
-
-      p {
-        color: white;
-        font-weight: 400;
-        font-size: 28px;
-        line-height: 35px;
-        text-align: center;
-      }
-
-      :nth-child(2n) {
-        background: var(--grey-0);
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        align-content: center;
-        justify-content: center;
-        gap: 2rem;
-      }
+  .conteiner-top {
+    height: auto;
+    background: var(--color-primary-1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    border-radius: 8px 8px 0 0;
+    p {
+      color: white;
+      font-weight: 400;
+      font-size: 1.2rem;
+      text-align: center;
+      padding: 0 30px;
+      font-weight: 400;
+      line-height: 35px;
     }
+    figure > img {
+      width: 250px;
+      margin-bottom: 20px;
+    }
+  }
 
-    a {
-      :nth-child(2n) {
-        color: var(--color-primary-1);
-        background: white;
-        border: solid 1px var(--grey-2);
-      }
-      width: 386px;
-      height: 55px;
-      font-weight: 600;
-      font-size: 22px;
+  .conteiner-bottom {
+    background: var(--grey-0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    border-radius: 7px;
+    gap: 20px;
+    padding: 50px;
+
+    .btn-register {
       display: flex;
       align-items: center;
       justify-content: center;
-      text-transform: uppercase;
-      font-size: 1rem;
       background: var(--color-primary-1);
-      color: white;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       border-radius: 7px;
-      border: solid 1px var(--grey-2);
+      max-width: 386px;
+      width: 100%;
+      height: 55px;
+      text-transform: uppercase;
+      color: white;
+    }
+
+    .btn-register:hover {
+      background: var(--color-primary-2);
+    }
+
+    .btn-login {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--grey-1);
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 7px;
+      max-width: 386px;
+      width: 100%;
+      height: 55px;
+      text-transform: uppercase;
+      color: black;
+    }
+
+    .btn-login:hover {
+      background: white;
     }
   }
-}
+
+  a:nth-child(1):hover {
+  }
 `;
