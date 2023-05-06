@@ -8,19 +8,27 @@ export const AboutPage = () => {
     <>
       <Header />
       <StyledMain>
-        <section>
+        <section className="about">
           <h2>MemoriCards</h2>
 
           <p>
-            Era uma vez cinco estudantes da Kenzie Academy que tinham uma paixão
-            em comum: a programação. Juntos, eles decidiram desenvolver uma
-            aplicação de flashcards para ajudar estudantes a aprenderem de forma
-            mais eficiente.
+            Imagine poder estudar ou aprender algo novo de forma eficiente,
+            divertida e totalmente personalizada às suas necessidades e
+            interesses. Com MemoriCards, você tem acesso a uma plataforma de
+            aprendizado inovadora que utiliza flashcards autorais para desafiar
+            a sua memória e ajudá-lo a dominar conceitos importantes de maneira
+            dinâmica e interativa. Crie seus próprios cards e pratique de forma
+            eficiente, seja para se preparar para uma prova, aprender um novo
+            idioma ou simplesmente ampliar seu conhecimento em qualquer área.
+            Com MemoriCards, você transforma seu aprendizado em uma jornada
+            prazerosa e recompensadora, e alcança resultados surpreendentes em
+            pouco tempo. Experimente agora essa ferramenta revolucionária e
+            sinta a diferença em seu potencial de aprendizagem!
           </p>
           {/* <img src="#" alt="#" /> */}
         </section>
 
-        <section>
+        <section className="social-networking"  >
           <h2>Desenvolvedores</h2>
 
           <ul>
@@ -155,6 +163,7 @@ export const AboutPage = () => {
             </li>
           </ul>
         </section>
+        
       </StyledMain>
     </>
   );
