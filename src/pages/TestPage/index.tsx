@@ -23,7 +23,17 @@ export const TestPage = () => {
 
   useEffect(() => {
     if (cardID) {
-      loadCardInTest(cardID);
+      toast.promise(
+        loadCardInTest(cardID),
+        {
+          loading: "Carregando o próximo card...",
+          success: "Card carregado com sucesso!",
+          error: "Algo deu errado. Tente novamente!",
+        },
+        {
+          id: "nextCard",
+        }
+      );
     }
   }, [cardID]);
 
@@ -59,6 +69,7 @@ export const TestPage = () => {
                   } else {
                     validateAnswer(form.answer.value);
                     submitButton.disabled = true;
+
                     setTimeout(() => {
                       goNextCard(currentIndex);
                       form.answer.value = "";
@@ -85,9 +96,11 @@ export const TestPage = () => {
                     const target = event.target as HTMLButtonElement;
                     const form = target.form as HTMLFormElement;
                     const submitButton = form[1] as HTMLButtonElement;
+                    const revealButton = form[2] as HTMLButtonElement;
                     form.answer.disabled = true;
                     form.answer.value = cardInTest?.answer;
                     submitButton.disabled = true;
+                    revealButton.disabled = true;
                     addPoint(unanswered, setUnanswered);
                     submitButton.classList.add("hide-button"); // Adicione a classe 'hide-button' ao botão "Enviar"
                     form.answer.classList.add("revealed"); // Adicione a classe 'revealed' ao Input "input-answer"
@@ -96,6 +109,7 @@ export const TestPage = () => {
                       form.answer.disabled = false;
                       form.answer.value = "";
                       submitButton.disabled = false;
+                      revealButton.disabled = false;
                     }, 3000);
                   }}
                 >

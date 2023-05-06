@@ -29,7 +29,7 @@ interface iCardContext {
   setIsTesting: React.Dispatch<React.SetStateAction<boolean>>;
   cardInTest: iCard | null;
   setCardInTest: React.Dispatch<React.SetStateAction<iCard | null>>;
-  loadCardInTest: (id: string) => Promise<void>;
+  loadCardInTest: (id: string) => Promise<iCard>;
   firstCardId: number;
   goNextCard: (currentIndex: number) => void;
   validateAnswer: (userAnswer: string) => void;
@@ -106,11 +106,17 @@ export const CardProvider = ({ children }: iProviderProps) => {
       resolve(loadCards());
     });
 
-    toast.promise(promise, {
-      loading: "Carregando cards",
-      success: "Cards carregados com sucesso",
-      error: "Falha ao carregar cards",
-    });
+    toast.promise(
+      promise,
+      {
+        loading: "Carregando cards",
+        success: "Cards carregados com sucesso",
+        error: "Falha ao carregar cards",
+      },
+      {
+        id: "loadingCards",
+      }
+    );
   }, []);
 
   useEffect(() => {
@@ -193,13 +199,17 @@ export const CardProvider = ({ children }: iProviderProps) => {
     }
   };
 
-  const loadCardInTest = async (id: string) => {
-    try {
-      const { data: CardInTest } = await api.get<iCard>(`/flashcards/${id}`);
-      setCardInTest(CardInTest);
-    } catch (error) {
-      console.log(error);
-    }
+  const loadCardInTest = async (id: string): Promise<iCard> => {
+    return new Promise(async (resolve, reject) => {
+      try {
+        const { data: CardInTest } = await api.get<iCard>(`/flashcards/${id}`);
+        setCardInTest(CardInTest);
+        resolve(CardInTest);
+      } catch (error) {
+        console.log(error);
+        reject(error);
+      }
+    });
   };
 
   const goNextCard = (currentIndex: number) => {
