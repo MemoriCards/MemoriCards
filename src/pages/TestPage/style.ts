@@ -9,7 +9,8 @@ export const TestMain = styled.main`
 
   .controlerContent {
     display: flex;
-    margin: auto;
+    width: auto;
+    margin: auto 15px;
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -41,8 +42,9 @@ export const TestMain = styled.main`
 
   .card-question {
     background-color: var(--grey-1);
-    width: 278px;
+    max-width: 220px;
     height: 325px;
+
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -58,7 +60,8 @@ export const TestMain = styled.main`
   .controlerMain {
     background-color: var(--grey-0);
     border-radius: 8px;
-    width: auto;
+    width: 100%;
+    max-width: 926px;
     height: auto;
     display: flex;
     margin: 0px auto;
@@ -67,7 +70,7 @@ export const TestMain = styled.main`
     flex-direction: column;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 7px;
-    padding: 50px;
+    padding: 20px;
   }
 
   .divisionContent {
@@ -85,7 +88,7 @@ export const TestMain = styled.main`
     padding-top: 25%;
 
     .btn-response {
-      width: auto;
+      width: 100%;
       height: 41px;
       padding: 0 20px;
       border-radius: 7px;
@@ -100,6 +103,19 @@ export const TestMain = styled.main`
 
     .btn-response:hover {
       background: white;
+    }
+
+    .input-answer.revealed {
+      font-weight: bold;
+      color: black;
+      border-radius: 4px;
+      text-transform: uppercase;
+      box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+    }
+
+    .hide-button {
+      opacity: 0.5;
+      cursor: not-allowed;
     }
 
     p {
@@ -118,7 +134,7 @@ export const TestMain = styled.main`
 
     input {
       border: none;
-      width: auto;
+      width: 100%;
       height: 41px;
       background-color: var(--grey-0);
       font-weight: 700;
@@ -144,6 +160,7 @@ export const TestMain = styled.main`
       color: white;
       font-weight: 700;
       font-size: 20px;
+      margin-left: 5px;
     }
 
     button:hover {

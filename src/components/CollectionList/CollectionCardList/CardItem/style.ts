@@ -8,13 +8,19 @@ export const Styledli = styled.li`
   min-width: 229.99px;
   max-width: 229.99px;
   max-height: 260px;
+  min-height: 260px;
   background: #ebebeb;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 7px;
   box-sizing: border-box;
-  border: solid 1px var(--grey-2);
+  border: solid 1px var(--grey-1);
   top: 80px;
   left: 0;
+
+
+  :hover {
+    background: white;
+  }
 
   div {
     background: var(--color-primary-1);
@@ -44,4 +50,12 @@ export const Styledli = styled.li`
     padding: 0px 20px;
     /* text-align: justify; */
   }
+
+
+  @media (max-width: 600px) {
+    min-height: 250px;
+  }
+
+
+
 `;

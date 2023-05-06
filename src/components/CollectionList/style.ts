@@ -1,32 +1,32 @@
 import styled from "styled-components";
 
 export const StyledSection = styled.section`
-  margin: 16px 0 0 0;
+  margin: 16px;
   display: flex;
   flex-direction: column;
-  width: 940px;
-  height: 747px;
-  background: var(--grey-2);
+  max-width: 940px;
+  max-height: 747px;
+  height: 100%;
+  width: 100%;
+
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
-  background: var(--color-primary-1);
+  background: var(--grey-1);
 
   .msg-emptyCards {
     margin: auto;
-    padding: 0 50px;
+    padding: 50px;
     padding-bottom: 60px;
-    font-size: 1.5rem;
-
+    font-size: 1rem;
+    color: black;
+    
   }
 
-  div > p {
-    color: white;
-  }
-
-  @media (max-width: 900px) {
+  @media (max-width: 600px) {
     width: auto;
     max-width: 300px;
     height: auto;
+    
   }
 `;
 
@@ -35,6 +35,8 @@ export const StyledDiv = styled.div`
   padding: 20px 100px;
   border-bottom: solid 1px;
   justify-content: space-between;
+  gap: 10px;
+
 
   button {
     width: 230px;
@@ -52,7 +54,7 @@ export const StyledDiv = styled.div`
     background: white;
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 800px) {
     width: auto;
     justify-content: center;
 
