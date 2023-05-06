@@ -7,8 +7,7 @@ export const StyledSection = styled.section`
   max-width: 940px;
   max-height: 747px;
   height: 100%;
-  width: 100%;
-
+  width: 90%;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
   background: var(--grey-1);
