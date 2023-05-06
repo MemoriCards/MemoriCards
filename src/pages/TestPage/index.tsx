@@ -1,9 +1,9 @@
+import { useContext, useEffect } from "react";
 import { toast } from "react-hot-toast";
 import { useParams } from "react-router-dom";
 import { Input } from "../../fragments/Input";
 import { cardContext } from "../../providers/cardContext";
 import { TestMain } from "./style";
-import { useContext, useEffect } from "react";
 
 export const TestPage = () => {
   const { id: cardID } = useParams();
@@ -79,14 +79,8 @@ export const TestPage = () => {
                 }}
               >
                 <div className="ControlerResposta">
-                  <Input
-                    className="input-answer"
-                    placeholder="Entre com a resposta"
-                    name="answer"
-                  />
-                  <button type="submit" className="submit-button">
-                    Enviar
-                  </button>
+                  <Input className="input-answer" placeholder="Entre com a resposta" name="answer" />
+                  <button type="submit">Enviar</button>
                 </div>
                 <p>Ou</p>
                 <button
@@ -102,8 +96,6 @@ export const TestPage = () => {
                     submitButton.disabled = true;
                     revealButton.disabled = true;
                     addPoint(unanswered, setUnanswered);
-                    submitButton.classList.add("hide-button"); // Adicione a classe 'hide-button' ao botão "Enviar"
-                    form.answer.classList.add("revealed"); // Adicione a classe 'revealed' ao Input "input-answer"
                     setTimeout(() => {
                       goNextCard(currentIndex);
                       form.answer.disabled = false;
@@ -119,7 +111,7 @@ export const TestPage = () => {
             </section>
           </div>
 
-          <p className="count">
+          <p className="count" >
             {currentIndex + 1}/{cards.length}
           </p>
         </div>

@@ -43,6 +43,7 @@ export const TestMain = styled.main`
   .card-question {
     background-color: var(--grey-1);
     max-width: 220px;
+    min-width: 220px;
     height: 325px;
 
     border-radius: 8px;
