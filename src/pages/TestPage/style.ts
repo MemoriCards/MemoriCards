@@ -179,8 +179,12 @@ export const TestMain = styled.main`
     margin-top: 30px;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     .controlerContent {
+
+      .btn_controller {
+        width: 90%;
+      }
       button {
         font-size: 1rem;
         width: auto;
@@ -193,6 +197,7 @@ export const TestMain = styled.main`
       width: auto;
       height: auto;
       padding: 20px;
+      width: 90%
     }
 
     .divisionContent {
@@ -235,12 +240,12 @@ export const TestMain = styled.main`
     }
 
     .ControlerResposta {
-      padding-bottom: 5px;
+      padding: 0 5px 5px 5px;
       width: auto;
       height: auto;
 
       input {
-        width: auto;
+        width: 90%;
         height: auto;
         font-size: 1rem;
       }

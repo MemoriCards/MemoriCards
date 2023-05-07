@@ -26,6 +26,7 @@ export const StyledHeader = styled.header`
 
     figure > img {
       width: 50%;   
+      height: 80px;
     }
 
     nav {
@@ -127,7 +128,7 @@ export const StyledHeader = styled.header`
 
 
 
-@media (min-width: 600px) {
+@media (min-width: 1024px) {
 
       background-color: var(--color-primary-1);
       color: var(--grey-0);

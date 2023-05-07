@@ -16,7 +16,7 @@ export const SectionDiv = styled.section `
         font-size: 30px;
 
         img {
-                width: 100%;
+                width: 220px;
         }
 
         a {
@@ -25,10 +25,41 @@ export const SectionDiv = styled.section `
                 padding: 5px 8px;
                 border-radius: 8px;
                 color: var(--grey-0);
+                color: white;
+        }
+
+        @media (min-width: 768px) {
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 50px;
+                background-color: var(--grey-0);
+                width: 80%;
+                height: 550px;
+                border-radius: 8px;
+                padding: 20px;
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                color: var(--grey-3);
+                font-size: 30px;
+
+
+                img {
+                        width: 470px;
+                }
+        
+                a {
+                        font-size: 20px;
+                        background-color: var(--color-primary-1);
+                        padding: 5px 8px;
+                        border-radius: 8px;
+                        color: white;
+        
+                }
 
         }
 
-        @media (min-width: 600px) {
+        @media (min-width: 1024px) {
 
                 display: flex;
                 flex-direction: column;
@@ -53,7 +84,7 @@ export const SectionDiv = styled.section `
                         background-color: var(--color-primary-1);
                         padding: 5px 8px;
                         border-radius: 8px;
-                        color: var(--grey-0);
+                        color: white;
         
                 }
 

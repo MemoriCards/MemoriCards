@@ -91,7 +91,7 @@ export const StyledMain = styled.main`
     }
   }
 
-  @media (min-width: 300px) {
+  @media (min-width: 320px) {
     display: flex;
     flex-direction: column;
     align-items: center;
