@@ -232,10 +232,14 @@ export const CardProvider = ({ children }: iProviderProps) => {
       .replace(/[\u0300-\u036f]/g, "")
       .toLowerCase();
     if (normalizedUserAnswer != normalizedCorrectAnswer) {
-      toast.error("Resposta incorreta");
+      toast.error("Resposta incorreta", {
+        className: "larger-toast",
+      });
       addPoint(incorrects, setIncorrects);
     } else {
-      toast.success("Resposta correta");
+      toast.success("Resposta correta", {
+        className: "larger-toast",
+      });
       addPoint(corrects, setCorrects);
     }
   };

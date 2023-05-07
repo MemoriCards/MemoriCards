@@ -25,15 +25,14 @@ export const StyledHeader = styled.header`
     }
 
     figure > img {
-      width: 50%;   
       height: 80px;
+      width:50%
     }
 
     nav {
       display: flex;
       flex-direction: column;
       width: 100%;
-      
       border-radius: 0 0 6px 6px;
       z-index: 1;
       justify-content: center;
@@ -130,7 +129,11 @@ export const StyledHeader = styled.header`
     padding: 0 5px;
   }
 
-
+  @media(min-width:767px){
+    figure > img{
+      width:auto;
+    }
+  }
 
 @media (min-width: 1024px) {
 
@@ -205,8 +208,6 @@ export const StyledHeader = styled.header`
     .active {
       border-bottom: 3px solid white;
       border-radius: 0;
-    
-      
     }
 
     a {

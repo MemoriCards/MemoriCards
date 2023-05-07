@@ -47,7 +47,6 @@ export const Styledli = styled.li`
     margin: auto;
     box-sizing: border-box;
     padding: 0px 20px;
-    /* text-align: justify; */
   }
 
   @media (max-width: 600px) {

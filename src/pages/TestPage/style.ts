@@ -102,6 +102,11 @@ export const TestMain = styled.main`
       border: solid 1px var(--grey-2);
     }
 
+    .btn-response:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
     .btn-response:hover {
       background: white;
     }
@@ -150,6 +155,10 @@ export const TestMain = styled.main`
       background: var(--grey-1);
       border-radius: 2px;
     }
+    input:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
 
     button {
       width: 113px;
@@ -163,7 +172,10 @@ export const TestMain = styled.main`
       font-size: 20px;
       margin-left: 5px;
     }
-
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
     button:hover {
       background: var(--color-primary-2);
     }

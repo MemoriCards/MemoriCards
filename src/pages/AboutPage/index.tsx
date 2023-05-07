@@ -25,7 +25,6 @@ export const AboutPage = () => {
             pouco tempo. Experimente agora essa ferramenta revolucionária e
             sinta a diferença em seu potencial de aprendizagem!
           </p>
-          {/* <img src="#" alt="#" /> */}
         </section>
 
         <section className="social-networking">

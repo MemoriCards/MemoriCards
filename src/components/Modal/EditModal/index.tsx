@@ -61,7 +61,7 @@ export const EditCardModal = () => {
             </div>
 
             <button className="enviar" type="submit">
-              Editar
+              EDITAR
             </button>
           </form>
         </div>

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import error404 from "../../assets/Error404.svg";
-import { SectionDiv } from './style';
+import { SectionDiv } from "./style";
 
 export const ErrorSection = () => (
   <SectionDiv>
