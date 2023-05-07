@@ -29,7 +29,6 @@ export const StyledMain = styled.main`
       font-weight: 400;
       font-size: 1.2rem;
       text-align: center;
-      padding: 0 30px;
       font-weight: 400;
       line-height: 35px;
     }
