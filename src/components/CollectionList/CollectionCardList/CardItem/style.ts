@@ -21,7 +21,7 @@ export const Styledli = styled.li`
     background: white;
   }
 
-  div {
+  .top-card {
     background: var(--color-primary-1);
     border-radius: 7px 7px 0px 0px;
     height: 32.78px;
@@ -52,5 +52,50 @@ export const Styledli = styled.li`
 
   @media (max-width: 600px) {
     min-height: 250px;
+  }
+  .flip-container {
+    perspective: 1000px;
+  }
+  .flipper {
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    position: relative;
+  }
+  .back {
+    transform: rotateY(180deg);
+  }
+  .front,
+  .back {
+    position: absolute;
+    backface-visibility: hidden;
+  }
+  #switch:checked ~ .flip-container .flipper {
+    transform: rotateY(180deg);
+  }
+  #switch {
+    display: none;
+  }
+  .FlipContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .FlipDiv {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .FlipFront,
+  .FlipBack {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
   }
 `;
