@@ -36,7 +36,7 @@ export const SectionDiv = styled.section `
                 gap: 50px;
                 background-color: var(--grey-0);
                 width: 80%;
-                height: 550px;
+                height: 400px;
                 border-radius: 8px;
                 padding: 20px;
                 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -45,7 +45,7 @@ export const SectionDiv = styled.section `
 
 
                 img {
-                        width: 470px;
+                        width: 300px;
                 }
         
                 a {
@@ -66,8 +66,8 @@ export const SectionDiv = styled.section `
                 align-items: center;
                 gap: 50px;
                 background-color: var(--grey-0);
-                width: 900px;
-                height: 700px;
+                width: 700px;
+                height: 400px;
                 border-radius: 8px;
                 padding: 20px;
                 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -76,7 +76,7 @@ export const SectionDiv = styled.section `
 
 
                 img {
-                        width: 670px;
+                        width: 300px;
                 }
         
                 a {

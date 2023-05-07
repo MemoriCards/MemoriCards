@@ -10,7 +10,7 @@ export const DivMain = styled.main `
 
 
 
-    @media (min-width: 600px) {
+    @media (min-width: 768px) {
 
         display: flex;
         align-items: center;

@@ -197,5 +197,12 @@ export const StyledHeader = styled.header`
     .Logout {
       cursor: pointer;
     } 
-   
+
+    .active {
+      background-color: blue;
+    }
+    
+    .pending {
+      background-color: red;
+    }
 `;
