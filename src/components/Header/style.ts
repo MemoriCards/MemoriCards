@@ -199,10 +199,36 @@ export const StyledHeader = styled.header`
     } 
 
     .active {
-      background-color: blue;
+      border-bottom: 3px solid white;
+      
+    }
+
+    a {
+      position: relative;
+      color: #fff;
+      text-decoration: none;  
+      border-bottom: 3px solid #0E387A;
     }
     
-    .pending {
-      background-color: red;
+    a:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      bottom: -3px;
+      height: 0;
+      left: 0;
+      border-bottom: 3px solid white;
+      visibility: hidden;
+      -webkit-transform: scaleX(0);
+      transform: scaleX(0);
+      -webkit-transition: all 0.3s ease-in-out 0s;
+      transition: all 0.3s ease-in-out 0s;
     }
+    
+    a:hover:before {
+      visibility: visible;
+      -webkit-transform: scaleX(1);
+      transform: scaleX(1);
+    }
+    
 `;
