@@ -39,9 +39,6 @@ export const StyledHeader = styled.header`
       justify-content: center;
     }
 
-    nav > a:hover {
-      background-color: var(--color-secundary);
-    }
 
     .controlerNavLogin {
       display: flex;
@@ -126,6 +123,13 @@ export const StyledHeader = styled.header`
     width: 25px;
   }
 
+  .active {
+    background-color: var(--color-primary-1);
+    color: var(--grey-0);
+    border-radius: 4px;
+    padding: 0 5px;
+  }
+
 
 
 @media (min-width: 1024px) {
@@ -200,6 +204,8 @@ export const StyledHeader = styled.header`
 
     .active {
       border-bottom: 3px solid white;
+      border-radius: 0;
+    
       
     }
 
