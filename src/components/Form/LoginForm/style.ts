@@ -14,10 +14,18 @@ export const LoginFormStyle = styled.div `
         justify-content: space-evenly;
 
         form {
-            gap: 30px;
+            gap: 10px;
             display: flex;
             flex-direction: column;
+            height: 180px;
+            justify-content: space-between;
+            
+            p{
+                font-size: 14px;
+                color: red;
+                font-weight: 600;
             }
+            
 
             button {
                 height: 42px;
@@ -28,7 +36,6 @@ export const LoginFormStyle = styled.div `
                 background-color: var(--color-secundary-3);
                 color: var(--grey-0);
                 font-size: 16px;
-                margin-top: 50px;
             }
         }
 
@@ -45,10 +52,17 @@ export const LoginFormStyle = styled.div `
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         justify-content: space-evenly;
 
-            form {
-            gap: 30px;
+        form {
+            gap: 10px;
             display: flex;
             flex-direction: column;
+            height: 150px;
+            justify-content: space-between;
+            height: 190px;
+            p {
+                font-size: 14px;
+                color: red;
+                font-weight: 600;
             }
 
             button {
@@ -60,7 +74,6 @@ export const LoginFormStyle = styled.div `
                 background-color: var(--color-secundary-3);
                 color: var(--grey-0);
                 font-size: 16px;
-                margin-top: 50px;
             }
         }
     }

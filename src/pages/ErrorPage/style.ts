@@ -7,4 +7,15 @@ export const DivMain = styled.main `
     align-items: center;
     justify-content: center;
     height: 90vh;
+
+
+
+    @media (min-width: 600px) {
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 90vh;
+
+    }
 `

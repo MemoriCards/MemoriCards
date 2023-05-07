@@ -16,10 +16,19 @@ export const RegisterDivStyle = styled.div `
         justify-content: space-evenly;
 
         form {
-            gap: 20px;
+            gap: 10px;
             display: flex;
             flex-direction: column;
+            height: 250px;
+            justify-content: space-between;
+
+            p {
+                font-size: 14px;
+                color: red;
+                font-weight: 600;
             }
+            
+        }
 
             button {
                 height: 42px;
@@ -30,7 +39,6 @@ export const RegisterDivStyle = styled.div `
                 background-color: var(--color-secundary-3);
                 color: var(--grey-0);
                 font-size: 16px;
-                margin-top: 50px;
             }
 }       
 
@@ -48,11 +56,20 @@ export const RegisterDivStyle = styled.div `
         justify-content: space-evenly;
 
             form {
-            gap: 30px;
-            display: flex;
-            flex-direction: column;
+                gap: 10px;
+                display: flex;
+                flex-direction: column;
+                height: 260px;
+                justify-content: space-between;
+
+                p {
+                    font-size: 14px;
+                    color: red;
+                    font-weight: 600;
+                }
             }
 
+            
             button {
                 height: 42px;
                 width: 368px;
@@ -62,7 +79,7 @@ export const RegisterDivStyle = styled.div `
                 background-color: var(--color-secundary-3);
                 color: var(--grey-0);
                 font-size: 16px;
-                margin-top: 50px;
+                
             }
         }
     }
