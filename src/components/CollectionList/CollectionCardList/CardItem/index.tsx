@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { cardContext, iCard } from "../../../../providers/cardContext";
 import { Styledli } from "./style";
 import ReactFlipCard from "reactjs-flip-card";
@@ -8,16 +8,11 @@ export interface ICardProps {
 }
 
 export const CardItem = ({ card }: ICardProps) => {
-  const [flip, setFlip] = useState(true);
   const { deleteCard, setEditIsModalVisible, setSelectedCard } =
     useContext(cardContext);
 
   return (
-    <Styledli
-      onClick={() => {
-        setFlip(!flip);
-      }}
-    >
+    <Styledli>
       <div className="top-card">
         <button
           onClick={() => {
@@ -35,6 +30,7 @@ export const CardItem = ({ card }: ICardProps) => {
           <i className="fa-solid fa-pen"></i>
         </button>
       </div>
+
       <ReactFlipCard
         flipCardCss="FlipDiv"
         frontCss="FlipFront"

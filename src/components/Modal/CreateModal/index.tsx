@@ -3,7 +3,7 @@ import { cardContext } from "../../../providers/cardContext";
 import cancel from "../../../assets/cancel.png";
 import { Input } from "../../../fragments/Input";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { StyledModal } from './style';
+import { StyledModal } from "./style";
 
 interface icreateCardModal {
   question: string;
@@ -54,7 +54,7 @@ export const CreateCardModal = () => {
               </div>
             </div>
             <button className="enviar" type="submit">
-              <i className="fa-solid fa-plus"></i> Criar card
+              <i className="fa-solid fa-plus"></i> CRIAR CARD
             </button>
           </form>
         </div>

@@ -7,21 +7,24 @@ export const IndexPage = () => {
     <>
       <StyledMain>
         <div className="conteiner-main">
-
-          <section className="conteiner-top" >
+          <section className="conteiner-top">
             <figure>
               <img src={Logo} alt="" />
             </figure>
             <p>
-            Desafie sua memória e aprenda de forma dinâmica e gratuita com flashcards autorais
+              Desafie sua memória e aprenda de forma dinâmica e gratuita com
+              flashcards autorais
             </p>
           </section>
 
-          <section  className="conteiner-bottom" >
-            <Link className="btn-register" to="/register">Comece Agora</Link>
-            <Link  className="btn-login" to="/login">Já tenho uma conta</Link>
+          <section className="conteiner-bottom">
+            <Link className="btn-register" to="/login">
+              LOGIN
+            </Link>
+            <Link className="btn-login" to="/register">
+              CADASTRE-SE
+            </Link>
           </section>
-          
         </div>
       </StyledMain>
     </>

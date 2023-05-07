@@ -16,8 +16,5 @@ export const StyledUl = styled.ul`
     gap: 0 25px;
     padding: 35px;
     flex-direction: column;
-    /* overflow-y: scroll;
-    overflow-y: hidden;
-    white-space: nowrap; */
   }
 `;

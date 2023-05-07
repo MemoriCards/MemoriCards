@@ -25,9 +25,8 @@ export const GlobalStyle = createGlobalStyle`
     text-decoration:none;  
 }
 
-/* scrollbar*/
 
-/* Works on Chrome, Edge, and Safari */
+
 *::-webkit-scrollbar {
   width: 12px;
 }
@@ -43,8 +42,6 @@ export const GlobalStyle = createGlobalStyle`
 
 body {
     background-image: url(${Background});
-    /* background-repeat: no-repeat;
-    background-size: cover; */
 }
 
 ul, ol, li{
@@ -75,7 +72,13 @@ textarea:focus, input:focus, select:focus {
 } 
 
 header{
-    margin-bottom:2rem;
+    padding-bottom:2rem;
 }
+
+.larger-toast{
+  padding:2rem;
+  margin-top:20vh;
+}
+
 
 `;

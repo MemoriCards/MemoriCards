@@ -64,22 +64,28 @@ export const TestPage = () => {
                   event.preventDefault();
                   const form = event.target as HTMLFormElement;
                   const submitButton = form[1] as HTMLButtonElement;
+                  const revealButton = form[2] as HTMLButtonElement;
                   if (form.answer.value == "") {
                     toast("Insira uma resposta ou revele-a");
                   } else {
                     validateAnswer(form.answer.value);
                     submitButton.disabled = true;
-
+                    revealButton.disabled = true;
                     setTimeout(() => {
                       goNextCard(currentIndex);
                       form.answer.value = "";
                       submitButton.disabled = false;
+                      revealButton.disabled = false;
                     }, 2000);
                   }
                 }}
               >
                 <div className="ControlerResposta">
-                  <Input className="input-answer" placeholder="Entre com a resposta" name="answer" />
+                  <Input
+                    className="input-answer"
+                    placeholder="Entre com a resposta"
+                    name="answer"
+                  />
                   <button type="submit">Enviar</button>
                 </div>
                 <p>Ou</p>
@@ -111,7 +117,7 @@ export const TestPage = () => {
             </section>
           </div>
 
-          <p className="count" >
+          <p className="count">
             {currentIndex + 1}/{cards.length}
           </p>
         </div>

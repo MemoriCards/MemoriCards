@@ -39,7 +39,7 @@ export const StyledModal = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: var(--color-secundary-3);
+    background-color: var(--color-primary-1);
     width: 100%;
     height: 50px;
     color: var(--grey-0);
@@ -91,9 +91,12 @@ export const StyledModal = styled.div`
     height: 41px;
     width: 206px;
     border-radius: 7px;
-    background-color: var(--color-secundary-3);
+    background-color: var(--color-primary-1);
     color: var(--grey-0);
     margin-top: 1rem;
+  }
+  .enviar:hover {
+    background-color: var(--color-primary-2);
   }
 
   @media (min-width: 600px) {
@@ -134,7 +137,6 @@ export const StyledModal = styled.div`
       display: flex;
       justify-content: space-around;
       align-items: center;
-      background-color: var(--color-secundary-3);
       width: 100%;
       height: 50px;
       color: var(--grey-0);
@@ -186,7 +188,6 @@ export const StyledModal = styled.div`
       height: 41px;
       width: 206px;
       border-radius: 7px;
-      background-color: var(--color-secundary-3);
       color: var(--grey-0);
       margin: 0;
     }

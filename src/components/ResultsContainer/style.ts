@@ -63,7 +63,7 @@ export const ResultsStyleDiv = styled.div`
     height: 41px;
     width: 150px;
     border-radius: 7px;
-    background-color: var(--color-secundary-3);
+    background-color: var(--color-primary-1);
     color: var(--grey-0);
     display: flex;
     -webkit-box-align: center;
@@ -71,6 +71,9 @@ export const ResultsStyleDiv = styled.div`
     -webkit-box-pack: center;
     justify-content: center;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px;
+  }
+  btn-again:hover {
+    background-color: var(--color-primary-2);
   }
 
   @media (min-width: 600px) {
@@ -135,7 +138,6 @@ export const ResultsStyleDiv = styled.div`
       height: 41px;
       width: 150px;
       border-radius: 7px;
-      background-color: var(--color-secundary-3);
       color: var(--grey-0);
       display: flex;
       -webkit-box-align: center;
