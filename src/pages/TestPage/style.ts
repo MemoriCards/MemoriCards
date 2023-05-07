@@ -179,9 +179,8 @@ export const TestMain = styled.main`
     margin-top: 30px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     .controlerContent {
-
       .btn_controller {
         width: 90%;
       }
@@ -197,7 +196,7 @@ export const TestMain = styled.main`
       width: auto;
       height: auto;
       padding: 20px;
-      width: 90%
+      width: 90%;
     }
 
     .divisionContent {
