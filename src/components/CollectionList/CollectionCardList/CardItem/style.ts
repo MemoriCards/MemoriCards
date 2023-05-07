@@ -17,7 +17,6 @@ export const Styledli = styled.li`
   top: 80px;
   left: 0;
 
-
   :hover {
     background: white;
   }
@@ -51,11 +50,7 @@ export const Styledli = styled.li`
     /* text-align: justify; */
   }
 
-
   @media (max-width: 600px) {
     min-height: 250px;
   }
-
-
-
 `;
