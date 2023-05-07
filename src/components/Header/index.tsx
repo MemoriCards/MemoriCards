@@ -6,7 +6,7 @@ import { useContext, useState } from "react";
 import Logout from "../../assets/logout.png";
 
 export const Header = () => {
-  const { user, doLogout } = useContext(userContext);
+  const { user, doLogout, navigate } = useContext(userContext);
 
   const [burger_class, setBurgerClass] = useState("burger-bar unclicked");
   const [menu_class, setMenuClass] = useState("menu hidden");
@@ -29,7 +29,7 @@ export const Header = () => {
         {!user ? (
           <nav>
             <figure>
-              <img src={Logo} alt="" />
+              <img src={Logo} alt="" onClick={() => navigate("/")} />
               <div className="burger-menu" onClick={updateMenu}>
                 <div className={burger_class}></div>
                 <div className={burger_class}></div>
@@ -37,7 +37,14 @@ export const Header = () => {
               </div>
             </figure>
             <div className={menu_class}>
-              <NavLink to="/login">Entrar</NavLink>
+              <NavLink
+                className={({ isActive, isPending }) =>
+                  isPending ? "pending" : isActive ? "active" : ""
+                }
+                to="/login"
+              >
+                Entrar
+              </NavLink>
               <NavLink to="/register">Cadastro</NavLink>
               <NavLink to="/about">Sobre</NavLink>
             </div>

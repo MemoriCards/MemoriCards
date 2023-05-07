@@ -23,10 +23,14 @@ export const LoginForm = () => {
       <LoginFormStyle>
         <h1>Entrar</h1>
         <form onSubmit={handleSubmit(submit)} noValidate>
+          <div>
           <Input label="Email" type="email" {...register("email")} />
           {errors.email ? <p>{errors.email.message}</p> : null}
+          </div>
+          <div>
           <Input label="Senha" type="password" {...register("password")} />
           {errors.password ? <p>{errors.password.message}</p> : null}
+          </div>
           <button type="submit">Entrar</button>
         </form>
       </LoginFormStyle>

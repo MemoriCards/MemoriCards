@@ -56,7 +56,7 @@ a{
 }
 
 a:visited {
-    color: inherit;
+    color: white;
 }
 
 button{

@@ -24,6 +24,7 @@ export const StyledModalEdit = styled.div`
     background-color: var(--grey-0);
     border-radius: 8px;
     align-items: flex-start;
+    z-index: 2;
   }
 
   input {
@@ -162,6 +163,7 @@ export const StyledModalEdit = styled.div`
       flex-direction: column;
       gap: 50px;
       height: 100%;
+      z-index: 2;
     }
 
     .ControlerForm {

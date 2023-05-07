@@ -26,6 +26,7 @@ export const StyledHeader = styled.header`
 
     figure > img {
       width: 50%;   
+      height: 80px;
     }
 
     nav {
@@ -38,9 +39,6 @@ export const StyledHeader = styled.header`
       justify-content: center;
     }
 
-    nav > a:hover {
-      background-color: var(--color-secundary);
-    }
 
     .controlerNavLogin {
       display: flex;
@@ -71,6 +69,7 @@ export const StyledHeader = styled.header`
   
   .menu {
       width: 95%;
+      height: 90px;
       padding: 10px;
       background-color: rgb(154, 181,240);
       display: flex;
@@ -124,9 +123,16 @@ export const StyledHeader = styled.header`
     width: 25px;
   }
 
+  .active {
+    background-color: var(--color-primary-1);
+    color: var(--grey-0);
+    border-radius: 4px;
+    padding: 0 5px;
+  }
 
 
-@media (min-width: 600px) {
+
+@media (min-width: 1024px) {
 
       background-color: var(--color-primary-1);
       color: var(--grey-0);
@@ -179,6 +185,7 @@ export const StyledHeader = styled.header`
 
     .menu {
       display: flex;
+      height: 75px;
       flex-direction: row;
       -webkit-box-align: center;
       align-items: center;
@@ -194,5 +201,40 @@ export const StyledHeader = styled.header`
     .Logout {
       cursor: pointer;
     } 
-   
+
+    .active {
+      border-bottom: 3px solid white;
+      border-radius: 0;
+    
+      
+    }
+
+    a {
+      position: relative;
+      color: #fff;
+      text-decoration: none;  
+      border-bottom: 3px solid #0E387A;
+    }
+    
+    a:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      bottom: -3px;
+      height: 0;
+      left: 0;
+      border-bottom: 3px solid white;
+      visibility: hidden;
+      -webkit-transform: scaleX(0);
+      transform: scaleX(0);
+      -webkit-transition: all 0.3s ease-in-out 0s;
+      transition: all 0.3s ease-in-out 0s;
+    }
+    
+    a:hover:before {
+      visibility: visible;
+      -webkit-transform: scaleX(1);
+      transform: scaleX(1);
+    }
+    
 `;
