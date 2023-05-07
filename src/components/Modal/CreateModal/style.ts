@@ -11,6 +11,7 @@ export const StyledModal = styled.div`
   justify-content: center;
 
   .cancel {
+    position: absolute;
     width: 50%;
   }
   .ControlerMain {
@@ -45,13 +46,17 @@ export const StyledModal = styled.div`
     color: var(--grey-0);
     font-weight: 400;
     border-radius: 8px 8px 0 0;
+    position: relative;
 
     span {
       margin: 0 auto;
     }
 
     button {
-      margin-right: 10px;
+      position: absolute;
+      top: 0.8rem;
+      right: 1rem;
+      width: 50px;
     }
   }
 
