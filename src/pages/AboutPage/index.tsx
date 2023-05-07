@@ -28,7 +28,7 @@ export const AboutPage = () => {
           {/* <img src="#" alt="#" /> */}
         </section>
 
-        <section className="social-networking"  >
+        <section className="social-networking">
           <h2>Desenvolvedores</h2>
 
           <ul>
@@ -163,7 +163,6 @@ export const AboutPage = () => {
             </li>
           </ul>
         </section>
-        
       </StyledMain>
     </>
   );

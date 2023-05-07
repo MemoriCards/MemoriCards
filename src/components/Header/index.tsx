@@ -47,10 +47,14 @@ export const Header = () => {
             <div className="controlerNavLogin">
               <figure>
                 <img src={Logo} alt="" />
+                <div className="controler-logout">
+                  <img
+                    className="Logout"
+                    onClick={() => doLogout()}
+                    src={Logout}
+                  />
+                </div>
               </figure>
-              <div className="controler-logout">
-              <img className="Logout" onClick={() => doLogout()} src={Logout} />
-              </div>
             </div>
           </nav>
         )}

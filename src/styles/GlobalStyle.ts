@@ -74,6 +74,8 @@ textarea:focus, input:focus, select:focus {
     border: 0;
 } 
 
-
+header{
+    margin-bottom:2rem;
+}
 
 `;

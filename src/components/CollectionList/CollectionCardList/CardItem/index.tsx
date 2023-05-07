@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { cardContext, iCard } from "../../../../providers/cardContext";
 import { Styledli } from "./style";
+import ReactFlipCard from "reactjs-flip-card";
 
 export interface ICardProps {
   card: iCard;
@@ -17,7 +18,7 @@ export const CardItem = ({ card }: ICardProps) => {
         setFlip(!flip);
       }}
     >
-      <div>
+      <div className="top-card">
         <button
           onClick={() => {
             deleteCard(card.id);
@@ -34,7 +35,15 @@ export const CardItem = ({ card }: ICardProps) => {
           <i className="fa-solid fa-pen"></i>
         </button>
       </div>
-      {flip ? <h3>{card.question}</h3> : <h3>{card.answer}</h3>}
+      <ReactFlipCard
+        flipCardCss="FlipDiv"
+        frontCss="FlipFront"
+        backCss="FlipBack"
+        flipTrigger="onClick"
+        containerCss="FlipContainer"
+        frontComponent={<h3>{card.question}</h3>}
+        backComponent={<h3>{card.answer}</h3>}
+      />
     </Styledli>
   );
 };
