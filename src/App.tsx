@@ -1,5 +1,13 @@
+import { RoutesMain } from "./Routes";
+import { Toaster } from "react-hot-toast";
+
 function App() {
-  return <></>;
+  return (
+    <>
+      <Toaster position="top-center" reverseOrder={false} />
+      <RoutesMain />
+    </>
+  );
 }
 
 export default App;
