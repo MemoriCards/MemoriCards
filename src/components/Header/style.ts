@@ -71,6 +71,7 @@ export const StyledHeader = styled.header`
   
   .menu {
       width: 95%;
+      height: 90px;
       padding: 10px;
       background-color: rgb(154, 181,240);
       display: flex;
@@ -179,6 +180,7 @@ export const StyledHeader = styled.header`
 
     .menu {
       display: flex;
+      height: 75px;
       flex-direction: row;
       -webkit-box-align: center;
       align-items: center;
