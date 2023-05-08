@@ -80,5 +80,9 @@ header{
   margin-top:20vh;
 }
 
+.fa {
+    color: black;
+  }
+
 
 `;
