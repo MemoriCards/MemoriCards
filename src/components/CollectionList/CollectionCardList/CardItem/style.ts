@@ -1,25 +1,21 @@
 import styled from "styled-components";
 
 export const Styledli = styled.li`
+  position: relative;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  /* height: 100%; */
   gap: 1rem;
-  min-width: 229.99px;
-  max-width: 229.99px;
-  max-height: 260px;
-  min-height: 260px;
-  background: #ebebeb;
+  width: 230px;
+  height: 260px;
+  /* background: var(--grey-1); */
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 7px;
   box-sizing: border-box;
-  border: solid 1px var(--grey-1);
-  top: 80px;
-  left: 0;
-
-  :hover {
-    background: white;
-  }
+  border: solid 1px var(--grey-2);
+  overflow: hidden;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
 
   .top-card {
     background: var(--color-primary-1);
@@ -30,11 +26,12 @@ export const Styledli = styled.li`
     justify-content: flex-end;
     padding: 0 10px;
     gap: 10px;
+    z-index: 1;
   }
 
   div > button {
-    background: #f4f4f4;
-    border: 0.5px solid #000000;
+    background: var(--grey-0);
+    border: 0.5px solid black;
     border-radius: 4px;
     width: 20px;
     height: 20px;
@@ -52,42 +49,50 @@ export const Styledli = styled.li`
   @media (max-width: 600px) {
     min-height: 250px;
   }
+
   .flip-container {
     perspective: 1000px;
   }
+
   .flipper {
     transition: transform 0.8s;
     transform-style: preserve-3d;
-    position: relative;
   }
+
   .back {
     transform: rotateY(180deg);
   }
+
   .front,
   .back {
     position: absolute;
     backface-visibility: hidden;
   }
+
   #switch:checked ~ .flip-container .flipper {
     transform: rotateY(180deg);
   }
+
   #switch {
     display: none;
   }
+
   .FlipContainer {
     width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    /* position: relative; */
   }
+
   .FlipDiv {
     width: 100%;
     height: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    position: absolute;
   }
+
   .FlipFront,
   .FlipBack {
     width: 100%;
@@ -96,5 +101,31 @@ export const Styledli = styled.li`
     align-items: center;
     justify-content: center;
     font-size: 14px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--grey-1);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 7px;
+    box-sizing: border-box;
+    border: solid 1px var(--grey-1);
+  }
+
+  .FlipFront:hover,
+  .FlipBack:hover {
+    background: white;
+  }
+
+  .FlipBack {
+    transform: rotateY(180deg);
+    /* background: var(--grey-2); */
+  }
+
+  .FlipContainer,
+  .FlipFront,
+  .FlipBack {
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
   }
 `;

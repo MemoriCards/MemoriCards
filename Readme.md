@@ -107,7 +107,7 @@ A url base da API é https://memori-cards-api.onrender.com
 Acesse o link abaixo e desfrute!
 
 ```url
-
+https://memori-cards.vercel.app/
 ```
 
 ## Funcionalidades
