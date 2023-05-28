@@ -37,7 +37,7 @@ export const AboutPage = () => {
                 alt="#"
               />
               <h4>Luana Carneiro</h4>
-              <h5>Tech Lead</h5>
+              <h5>Teach Leader</h5>
               <span>
                 <a
                   href="https://www.linkedin.com/in/luanamariacarneiro/"
@@ -144,7 +144,7 @@ export const AboutPage = () => {
               <h5>Quality Assurance</h5>
               <span>
                 <a
-                  href="https://www.linkedin.com/in/niljoshua/overlay/contact-info/"
+                  href="hhttps://www.linkedin.com/in/niljoshua/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
